@@ -52,17 +52,20 @@
 #define SW0 0b00000001
 #define SW1 0b00000010
 
-#define SIZE 19
-#define TOWER 'T'
+#define SIZEX 40
+#define SIZEY 30
+#define TOWERU '1'
+#define TOWERD '2'
 #define GRASS 'G'
 #define DIRT 'D'
-#define NUMOFTOWERS 4
-#define BLANK '0'
+#define BUSH 'B'
+#define NUMOFTOWERS 8
+#define NUMOFBUSHES 20
 
 int i, x, y, ii, oi, R, G, B, RGB, kolona, red, RGBgray;
 int randomCounter = 50;
 
-char map[SIZE][SIZE];
+char map[SIZEX][SIZEY];
 
 void init(){
 	VGA_PERIPH_MEM_mWriteMemory(
@@ -84,55 +87,75 @@ void init(){
 }
 
 //function that generates random game map
-void makeMap(char inputMap[SIZE][SIZE]) {
-	int numOfTowers = NUMOFTOWERS, row, column, i, j;
-	char temp[SIZE][SIZE];
+void makeMap(char inputMap[SIZEX][SIZEY]) {
+	int numOfTowers = NUMOFTOWERS, numOfBushes = NUMOFBUSHES;
+	int row, column, i, j, rnd;
+	char temp[SIZEX][SIZEY];
 
 	srand(randomCounter);
 
 	//generise teren
-	for (i = 0; i < SIZE; i++) {
-		for (j = 0; j < SIZE; j++) {
-			if (i == 10) temp[i][j] = DIRT;
+	for (i = 0; i < SIZEX; i++) {
+		for (j = 0; j < SIZEY; j++) {
+			if (i == 15) temp[i][j] = DIRT;
 			else temp[i][j] = GRASS;
 		}
 	}
 
 	//postavlja random tornjeve
 	while (numOfTowers > 0) {
-		row = rand() % SIZE;
-		column = rand() % SIZE;
-		if (temp[row][column] == GRASS && (temp[row+1][column] == DIRT || temp[row-1][column] == DIRT)) {
-			temp[row][column] = TOWER;
+		rnd = rand() % 2;
+		if (rnd == 0) row = 13;
+		else row = 16;
+
+		if (row == 13) {
+			temp[column][row] = TOWERU;
+			temp[column][row + 1] = TOWERD;
+			numOfTowers--;
+		}
+
+		if (row == 16) {
+			temp[column][row] = TOWERU;
+			temp[column][row + 1] = TOWERD;
 			numOfTowers--;
 		}
 	}
 
-	//for testing
+	while (numOfBushes > 0) {
+		row = rand() % 30;
+		column = rand() % 40;
 
-	for (i = 0; i < SIZE; i++) {
-		for (j = 0; j < SIZE; j++) {
+		if (map[column][row] == GRASS) {
+			map[column][row] = BUSH;
+			numOfBushes--;
+		}
+	}
+
+	for (i = 0; i < SIZEX; i++) {
+		for (j = 0; j < SIZEY; j++) {
+			inputMap[i][j] = temp[i][j];
+
+		}
+	}
+
+	//for testing
+/*
+	for (i = 0; i < SIZEX; i++) {
+		for (j = 0; j < SIZEY; j++) {
 			xil_printf("%c", temp[i][j]);
 		}
 		xil_printf("\n");
 	}
 
-	for (i = 0; i < SIZE; i++) {
-		for (j = 0; j < SIZE; j++) {
-			inputMap[i][j] = temp[j][i];
-
-		}
-	}
-
 	xil_printf("\n");
 
-	for (i = 0; i < SIZE; i++) {
-		for (j = 0; j < SIZE; j++) {
-			xil_printf("%c", inputMap[j][i]);
+	for (i = 0; i < SIZEX; i++) {
+		for (j = 0; j < SIZEY; j++) {
+			xil_printf("%c", inputMap[i][j]);
 		}
 		xil_printf("\n");
 	}
-
+*/
 }
 
 //extracting pixel data from a picture for printing out on the display
@@ -171,28 +194,34 @@ int main() {
 	init();
 
 	//black background
-	for (x = 0; x < 320; x++) {
-		for (y = 0; y < 240; y++) {
-			i = y * 320 + x;
+	/*for (x = 0; x < 640; x++) {
+		for (y = 0; y < 480; y++) {
+			i = y * 640 + x;
 			VGA_PERIPH_MEM_mWriteMemory(
 					XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + GRAPHICS_MEM_OFF
 							+ i * 4, 0x000000);
 		}
-	}
+	}*/
 
 	makeMap(map);
 
 	//drawing a map
-	for (kolona = 0; kolona < SIZE; kolona++) {
-		for (red = 0; red < SIZE; red++) {
-			if (map[red][kolona] == GRASS){
+	for (kolona = 0; kolona < SIZEX; kolona++) {
+		for (red = 0; red < SIZEY; red++) {
+			if (map[kolona][red] == GRASS){
 				drawSprite(16, 0, red * 16, kolona * 16, 16, 16);
 			}
-			if (map[red][kolona] == DIRT) {
+			if (map[kolona][red] == DIRT) {
 				drawSprite(0, 0, red * 16, kolona * 16, 16, 16);
 			}
-			if (map[red][kolona] == TOWER) {
+			if (map[kolona][red] == TOWERU) {
 				drawSprite(32, 0, red * 16, kolona * 16, 16, 16);
+			}
+			if (map[kolona][red] == TOWERD) {
+				drawSprite(32, 16, red * 16, kolona * 16, 16, 16);
+			}
+			if (map[kolona][red] == BUSH){
+				drawSprite(64, 0, red * 16, kolona * 16, 16, 16);
 			}
 		}
 	}

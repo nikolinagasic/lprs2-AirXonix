@@ -1,10 +1,19 @@
-Release 14.6 - libgen Xilinx EDK 14.6 Build EDK_P.68d
+Release 14.7 - libgen Xilinx EDK 14.7 Build EDK_P.20131013
  (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 Command Line: libgen -hw ../TowerDefence_hw_platform/system.xml -pe microblaze_0
 -log libgen.log system.mss 
 
+WARNING:EDK:411 - bram -
+   C:\Users\stefa\Desktop\VI-sem\LPRS2\lprs2-TowerDefence\SDK\SDK_Workspace\stan
+   dalone_bsp_0\system.mss line 33 - deprecated driver!
+WARNING:EDK:411 - bram -
+   C:\Users\stefa\Desktop\VI-sem\LPRS2\lprs2-TowerDefence\SDK\SDK_Workspace\stan
+   dalone_bsp_0\system.mss line 39 - deprecated driver!
+WARNING:EDK:411 - standalone -
+   C:\Users\stefa\Desktop\VI-sem\LPRS2\lprs2-TowerDefence\SDK\SDK_Workspace\stan
+   dalone_bsp_0\system.mss line 5 - deprecated os!
 
 Staging source files.
 Running DRCs.
