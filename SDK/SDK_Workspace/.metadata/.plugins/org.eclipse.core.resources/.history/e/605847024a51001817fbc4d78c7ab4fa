@@ -63,6 +63,7 @@ int i, x, y, ii, oi, R, G, B, RGB, kolona, red, RGBgray;
 int randomCounter = 50;
 
 char map[SIZE][SIZE];
+char towers[SIZE][SIZE];
 
 void init(){
 	VGA_PERIPH_MEM_mWriteMemory(
@@ -84,15 +85,15 @@ void init(){
 }
 
 //function that generates random game map
-void makeMap(char inputMap[SIZE][SIZE]) {
+void makeMap(char inputMap[19][19]) {
 	int numOfTowers = NUMOFTOWERS, row, column, i, j;
-	char temp[SIZE][SIZE];
+	char temp[19][19];
 
 	srand(randomCounter);
 
 	//generise teren
-	for (i = 0; i < SIZE; i++) {
-		for (j = 0; j < SIZE; j++) {
+	for (i = 0; i < 19; i++) {
+		for (j = 0; j < 19; j++) {
 			if (i == 10) temp[i][j] = DIRT;
 			else temp[i][j] = GRASS;
 		}
@@ -100,8 +101,8 @@ void makeMap(char inputMap[SIZE][SIZE]) {
 
 	//postavlja random tornjeve
 	while (numOfTowers > 0) {
-		row = rand() % SIZE;
-		column = rand() % SIZE;
+		row = rand() % 19;
+		column = rand() % 19;
 		if (temp[row][column] == GRASS && (temp[row+1][column] == DIRT || temp[row-1][column] == DIRT)) {
 			temp[row][column] = TOWER;
 			numOfTowers--;
@@ -110,15 +111,15 @@ void makeMap(char inputMap[SIZE][SIZE]) {
 
 	//for testing
 
-	for (i = 0; i < SIZE; i++) {
-		for (j = 0; j < SIZE; j++) {
+	for (i = 0; i < 19; i++) {
+		for (j = 0; j < 19; j++) {
 			xil_printf("%c", temp[i][j]);
 		}
 		xil_printf("\n");
 	}
 
-	for (i = 0; i < SIZE; i++) {
-		for (j = 0; j < SIZE; j++) {
+	for (i = 0; i < 19; i++) {
+		for (j = 0; j < 19; j++) {
 			inputMap[i][j] = temp[j][i];
 
 		}
@@ -126,8 +127,8 @@ void makeMap(char inputMap[SIZE][SIZE]) {
 
 	xil_printf("\n");
 
-	for (i = 0; i < SIZE; i++) {
-		for (j = 0; j < SIZE; j++) {
+	for (i = 0; i < 9; i++) {
+		for (j = 0; j < 9; j++) {
 			xil_printf("%c", inputMap[j][i]);
 		}
 		xil_printf("\n");
@@ -168,7 +169,6 @@ void drawSprite(int sprite_pos_x, int sprite_pos_y, int display_out_x, int displ
 int main() {
 
 	init_platform();
-	init();
 
 	//black background
 	for (x = 0; x < 320; x++) {
@@ -180,23 +180,25 @@ int main() {
 		}
 	}
 
-	makeMap(map);
-
 	//drawing a map
-	for (kolona = 0; kolona < SIZE; kolona++) {
-		for (red = 0; red < SIZE; red++) {
-			if (map[red][kolona] == GRASS){
-				drawSprite(16, 0, red * 16, kolona * 16, 16, 16);
-			}
-			if (map[red][kolona] == DIRT) {
-				drawSprite(0, 0, red * 16, kolona * 16, 16, 16);
-			}
-			if (map[red][kolona] == TOWER) {
-				drawSprite(32, 0, red * 16, kolona * 16, 16, 16);
-			}
+	for (kolona = 0; kolona < 9; kolona++) {
+		for (red = 0; red < 9; red++) {
+			drawMap(80, 16, 80 + red * 16, 80 + kolona * 16, 16, 16);
 		}
 	}
+	/*
+	//smiley
+	drawMap(0, 55, 120, 54, 27, 26);
 
+	//flag
+	drawMap(65, 17, 154, 60, 13, 13);
+
+	//counter
+	drawMap(116, 32, 168, 54, 14, 23);
+
+	//moving through the table
+	move();
+	*/
 	cleanup_platform();
 
 	return 0;

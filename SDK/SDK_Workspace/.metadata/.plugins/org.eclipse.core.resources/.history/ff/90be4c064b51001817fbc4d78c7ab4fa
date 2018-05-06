@@ -188,12 +188,10 @@ int main() {
 			if (map[red][kolona] == GRASS){
 				drawSprite(16, 0, red * 16, kolona * 16, 16, 16);
 			}
-			if (map[red][kolona] == DIRT) {
+			else if (map[red][kolona] == DIRT) {
 				drawSprite(0, 0, red * 16, kolona * 16, 16, 16);
 			}
-			if (map[red][kolona] == TOWER) {
-				drawSprite(32, 0, red * 16, kolona * 16, 16, 16);
-			}
+
 		}
 	}
 

@@ -194,6 +194,7 @@ int main() {
 			if (map[red][kolona] == TOWER) {
 				drawSprite(32, 0, red * 16, kolona * 16, 16, 16);
 			}
+
 		}
 	}
 

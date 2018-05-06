@@ -63,36 +63,18 @@ int i, x, y, ii, oi, R, G, B, RGB, kolona, red, RGBgray;
 int randomCounter = 50;
 
 char map[SIZE][SIZE];
-
-void init(){
-	VGA_PERIPH_MEM_mWriteMemory(
-				XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x00, 0x0); // direct mode   0
-	VGA_PERIPH_MEM_mWriteMemory(
-			XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x04, 0x3); // display_mode  1
-	VGA_PERIPH_MEM_mWriteMemory(
-			XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x08, 0x0); // show frame      2
-	VGA_PERIPH_MEM_mWriteMemory(
-			XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x0C, 0xff); // font size       3
-	VGA_PERIPH_MEM_mWriteMemory(
-			XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x10, 0xFFFFFF); // foreground 4
-	VGA_PERIPH_MEM_mWriteMemory(
-			XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x14, 0x0000FF); // background color 5
-	VGA_PERIPH_MEM_mWriteMemory(
-			XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x18, 0xFF0000); // frame color      6
-	VGA_PERIPH_MEM_mWriteMemory(
-			XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x20, 1);
-}
+char towers[SIZE][SIZE];
 
 //function that generates random game map
-void makeMap(char inputMap[SIZE][SIZE]) {
+void makeMap(char inputMap[19][19]) {
 	int numOfTowers = NUMOFTOWERS, row, column, i, j;
-	char temp[SIZE][SIZE];
+	char temp[19][19];
 
 	srand(randomCounter);
 
 	//generise teren
-	for (i = 0; i < SIZE; i++) {
-		for (j = 0; j < SIZE; j++) {
+	for (i = 0; i < 19; i++) {
+		for (j = 0; j < 19; j++) {
 			if (i == 10) temp[i][j] = DIRT;
 			else temp[i][j] = GRASS;
 		}
@@ -100,8 +82,8 @@ void makeMap(char inputMap[SIZE][SIZE]) {
 
 	//postavlja random tornjeve
 	while (numOfTowers > 0) {
-		row = rand() % SIZE;
-		column = rand() % SIZE;
+		row = rand() % 19;
+		column = rand() % 19;
 		if (temp[row][column] == GRASS && (temp[row+1][column] == DIRT || temp[row-1][column] == DIRT)) {
 			temp[row][column] = TOWER;
 			numOfTowers--;
@@ -110,15 +92,15 @@ void makeMap(char inputMap[SIZE][SIZE]) {
 
 	//for testing
 
-	for (i = 0; i < SIZE; i++) {
-		for (j = 0; j < SIZE; j++) {
+	for (i = 0; i < 19; i++) {
+		for (j = 0; j < 19; j++) {
 			xil_printf("%c", temp[i][j]);
 		}
 		xil_printf("\n");
 	}
 
-	for (i = 0; i < SIZE; i++) {
-		for (j = 0; j < SIZE; j++) {
+	for (i = 0; i < 19; i++) {
+		for (j = 0; j < 19; j++) {
 			inputMap[i][j] = temp[j][i];
 
 		}
@@ -126,8 +108,8 @@ void makeMap(char inputMap[SIZE][SIZE]) {
 
 	xil_printf("\n");
 
-	for (i = 0; i < SIZE; i++) {
-		for (j = 0; j < SIZE; j++) {
+	for (i = 0; i < 9; i++) {
+		for (j = 0; j < 9; j++) {
 			xil_printf("%c", inputMap[j][i]);
 		}
 		xil_printf("\n");
@@ -167,8 +149,46 @@ void drawSprite(int sprite_pos_x, int sprite_pos_y, int display_out_x, int displ
 
 int main() {
 
+	int j, p, r;
+	inc1 = 0;
+	inc2 = 0;
+	numOfFlags = NUMOFMINES;
+	flagTrue = 0;
+	numOfMines = NUMOFMINES;
+	firstTimeCenter = 0;
+
 	init_platform();
-	init();
+	/*
+	//helping map for cleaning the table when blank button is pressed
+	for (p = 0; p < SIZE; p++) {
+		for (r = 0; r < SIZE; r++) {
+			indicationMap[p][r] = BLANK;
+		}
+	}
+
+	//map which contains all the moves of the player
+	for (i = 0; i < 9; i++) {
+		for (j = 0; j < 9; j++) {
+			blankMap[i][j] = BEG;
+		}
+	}
+	*/
+	VGA_PERIPH_MEM_mWriteMemory(
+			XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x00, 0x0); // direct mode   0
+	VGA_PERIPH_MEM_mWriteMemory(
+			XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x04, 0x3); // display_mode  1
+	VGA_PERIPH_MEM_mWriteMemory(
+			XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x08, 0x0); // show frame      2
+	VGA_PERIPH_MEM_mWriteMemory(
+			XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x0C, 0xff); // font size       3
+	VGA_PERIPH_MEM_mWriteMemory(
+			XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x10, 0xFFFFFF); // foreground 4
+	VGA_PERIPH_MEM_mWriteMemory(
+			XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x14, 0x0000FF); // background color 5
+	VGA_PERIPH_MEM_mWriteMemory(
+			XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x18, 0xFF0000); // frame color      6
+	VGA_PERIPH_MEM_mWriteMemory(
+			XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x20, 1);
 
 	//black background
 	for (x = 0; x < 320; x++) {
@@ -180,23 +200,25 @@ int main() {
 		}
 	}
 
-	makeMap(map);
-
 	//drawing a map
-	for (kolona = 0; kolona < SIZE; kolona++) {
-		for (red = 0; red < SIZE; red++) {
-			if (map[red][kolona] == GRASS){
-				drawSprite(16, 0, red * 16, kolona * 16, 16, 16);
-			}
-			if (map[red][kolona] == DIRT) {
-				drawSprite(0, 0, red * 16, kolona * 16, 16, 16);
-			}
-			if (map[red][kolona] == TOWER) {
-				drawSprite(32, 0, red * 16, kolona * 16, 16, 16);
-			}
+	for (kolona = 0; kolona < 9; kolona++) {
+		for (red = 0; red < 9; red++) {
+			drawMap(80, 16, 80 + red * 16, 80 + kolona * 16, 16, 16);
 		}
 	}
+	/*
+	//smiley
+	drawMap(0, 55, 120, 54, 27, 26);
 
+	//flag
+	drawMap(65, 17, 154, 60, 13, 13);
+
+	//counter
+	drawMap(116, 32, 168, 54, 14, 23);
+
+	//moving through the table
+	move();
+	*/
 	cleanup_platform();
 
 	return 0;

@@ -180,20 +180,10 @@ int main() {
 		}
 	}
 
-	makeMap(map);
-
 	//drawing a map
 	for (kolona = 0; kolona < SIZE; kolona++) {
 		for (red = 0; red < SIZE; red++) {
-			if (map[red][kolona] == GRASS){
-				drawSprite(16, 0, red * 16, kolona * 16, 16, 16);
-			}
-			if (map[red][kolona] == DIRT) {
-				drawSprite(0, 0, red * 16, kolona * 16, 16, 16);
-			}
-			if (map[red][kolona] == TOWER) {
-				drawSprite(32, 0, red * 16, kolona * 16, 16, 16);
-			}
+			drawSprite(80, 16, 80 + red * 16, 80 + kolona * 16, 16, 16);
 		}
 	}
 

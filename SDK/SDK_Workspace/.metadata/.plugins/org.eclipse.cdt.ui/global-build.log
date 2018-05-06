@@ -135,3 +135,430 @@ make: Nothing to be done for `all'.
 16:27:15 **** Incremental Build of configuration Debug for project hello_world ****
 make all 
 make: Nothing to be done for `all'.
+17:34:24 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+make: Nothing to be done for `all'.
+17:35:30 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'printOutEndOfGame':
+../src/helloworld.c:90:6: warning: implicit declaration of function 'drawMap' [-Wimplicit-function-declaration]
+../src/helloworld.c: In function 'makeTable':
+../src/helloworld.c:191:50: warning: unused variable 'm' [-Wunused-variable]
+../src/helloworld.c: At top level:
+../src/helloworld.c:286:6: warning: conflicting types for 'drawMap' [enabled by default]
+../src/helloworld.c:90:6: note: previous implicit declaration of 'drawMap' was here
+../src/helloworld.c: In function 'drawMap':
+../src/helloworld.c:295:14: error: 'minesweeper_sprites' undeclared (first use in this function)
+../src/helloworld.c:295:14: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c: In function 'move':
+../src/helloworld.c:361:6: warning: unused variable 'prethodnoStanje' [-Wunused-variable]
+../src/helloworld.c:360:16: warning: unused variable 'ib' [-Wunused-variable]
+../src/helloworld.c:360:12: warning: unused variable 'ic' [-Wunused-variable]
+../src/helloworld.c:360:9: warning: unused variable 'y' [-Wunused-variable]
+../src/helloworld.c:360:6: warning: unused variable 'x' [-Wunused-variable]
+../src/helloworld.c:359:37: warning: variable 'oldEndY' set but not used [-Wunused-but-set-variable]
+../src/helloworld.c:359:28: warning: unused variable 'oldEndX' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+17:42:52 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'makeTable':
+../src/helloworld.c:193:50: warning: unused variable 'm' [-Wunused-variable]
+../src/helloworld.c: In function 'drawMap':
+../src/helloworld.c:297:14: error: 'minesweeper_sprites' undeclared (first use in this function)
+../src/helloworld.c:297:14: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:592:12: warning: unused variable 'r' [-Wunused-variable]
+../src/helloworld.c:592:9: warning: unused variable 'p' [-Wunused-variable]
+../src/helloworld.c:592:6: warning: unused variable 'j' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+17:54:20 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'makeMap':
+../src/helloworld.c:221:4: error: 'surroundingMines' undeclared (first use in this function)
+../src/helloworld.c:221:4: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c: In function 'drawMap':
+../src/helloworld.c:299:14: error: 'minesweeper_sprites' undeclared (first use in this function)
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:597:15: error: 'NUMOFMINES' undeclared (first use in this function)
+../src/helloworld.c:594:12: warning: unused variable 'r' [-Wunused-variable]
+../src/helloworld.c:594:9: warning: unused variable 'p' [-Wunused-variable]
+../src/helloworld.c:594:6: warning: unused variable 'j' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+17:55:46 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'makeMap':
+../src/helloworld.c:221:4: error: 'surroundingMines' undeclared (first use in this function)
+../src/helloworld.c:221:4: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c: In function 'drawMap':
+../src/helloworld.c:299:14: error: 'minesweeper_sprites' undeclared (first use in this function)
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:597:15: error: 'NUMOFMINES' undeclared (first use in this function)
+../src/helloworld.c:594:12: warning: unused variable 'r' [-Wunused-variable]
+../src/helloworld.c:594:9: warning: unused variable 'p' [-Wunused-variable]
+../src/helloworld.c:594:6: warning: unused variable 'j' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+17:55:58 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'makeMap':
+../src/helloworld.c:221:4: error: 'surroundingMines' undeclared (first use in this function)
+../src/helloworld.c:221:4: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c: In function 'drawMap':
+../src/helloworld.c:299:14: error: 'minesweeper_sprites' undeclared (first use in this function)
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:597:15: error: 'NUMOFMINES' undeclared (first use in this function)
+../src/helloworld.c:594:12: warning: unused variable 'r' [-Wunused-variable]
+../src/helloworld.c:594:9: warning: unused variable 'p' [-Wunused-variable]
+../src/helloworld.c:594:6: warning: unused variable 'j' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+17:56:53 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'makeMap':
+../src/helloworld.c:221:4: error: 'surroundingMines' undeclared (first use in this function)
+../src/helloworld.c:221:4: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c: In function 'drawMap':
+../src/helloworld.c:299:14: error: 'minesweeper_sprites' undeclared (first use in this function)
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:597:15: error: 'NUMOFMINES' undeclared (first use in this function)
+../src/helloworld.c:594:12: warning: unused variable 'r' [-Wunused-variable]
+../src/helloworld.c:594:9: warning: unused variable 'p' [-Wunused-variable]
+../src/helloworld.c:594:6: warning: unused variable 'j' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+18:03:11 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:553:15: error: 'NUMOFMINES' undeclared (first use in this function)
+../src/helloworld.c:553:15: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:550:12: warning: unused variable 'r' [-Wunused-variable]
+../src/helloworld.c:550:9: warning: unused variable 'p' [-Wunused-variable]
+../src/helloworld.c:550:6: warning: unused variable 'j' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+18:07:05 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:553:15: error: 'NUMOFMINES' undeclared (first use in this function)
+../src/helloworld.c:553:15: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:604:4: warning: implicit declaration of function 'drawMap' [-Wimplicit-function-declaration]
+../src/helloworld.c:550:12: warning: unused variable 'r' [-Wunused-variable]
+../src/helloworld.c:550:9: warning: unused variable 'p' [-Wunused-variable]
+../src/helloworld.c:550:6: warning: unused variable 'j' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+18:11:37 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'makeMap':
+../src/helloworld.c:77:17: error: 'BLANK' undeclared (first use in this function)
+../src/helloworld.c:77:17: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:425:2: error: 'inc1' undeclared (first use in this function)
+../src/helloworld.c:426:2: error: 'inc2' undeclared (first use in this function)
+../src/helloworld.c:427:2: error: 'numOfFlags' undeclared (first use in this function)
+../src/helloworld.c:427:15: error: 'NUMOFMINES' undeclared (first use in this function)
+../src/helloworld.c:428:2: error: 'flagTrue' undeclared (first use in this function)
+../src/helloworld.c:429:2: error: 'numOfMines' undeclared (first use in this function)
+../src/helloworld.c:430:2: error: 'firstTimeCenter' undeclared (first use in this function)
+../src/helloworld.c:478:4: warning: implicit declaration of function 'drawMap' [-Wimplicit-function-declaration]
+../src/helloworld.c:424:12: warning: unused variable 'r' [-Wunused-variable]
+../src/helloworld.c:424:9: warning: unused variable 'p' [-Wunused-variable]
+../src/helloworld.c:424:6: warning: unused variable 'j' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+18:12:18 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:426:2: error: 'inc1' undeclared (first use in this function)
+../src/helloworld.c:426:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:427:2: error: 'inc2' undeclared (first use in this function)
+../src/helloworld.c:428:2: error: 'numOfFlags' undeclared (first use in this function)
+../src/helloworld.c:428:15: error: 'NUMOFMINES' undeclared (first use in this function)
+../src/helloworld.c:429:2: error: 'flagTrue' undeclared (first use in this function)
+../src/helloworld.c:430:2: error: 'numOfMines' undeclared (first use in this function)
+../src/helloworld.c:431:2: error: 'firstTimeCenter' undeclared (first use in this function)
+../src/helloworld.c:479:4: warning: implicit declaration of function 'drawMap' [-Wimplicit-function-declaration]
+../src/helloworld.c:425:12: warning: unused variable 'r' [-Wunused-variable]
+../src/helloworld.c:425:9: warning: unused variable 'p' [-Wunused-variable]
+../src/helloworld.c:425:6: warning: unused variable 'j' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+18:20:56 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:427:2: error: 'inc1' undeclared (first use in this function)
+../src/helloworld.c:427:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:428:2: error: 'inc2' undeclared (first use in this function)
+../src/helloworld.c:429:2: error: 'numOfFlags' undeclared (first use in this function)
+../src/helloworld.c:429:15: error: 'NUMOFMINES' undeclared (first use in this function)
+../src/helloworld.c:430:2: error: 'flagTrue' undeclared (first use in this function)
+../src/helloworld.c:431:2: error: 'numOfMines' undeclared (first use in this function)
+../src/helloworld.c:432:2: error: 'firstTimeCenter' undeclared (first use in this function)
+../src/helloworld.c:480:4: warning: implicit declaration of function 'drawMap' [-Wimplicit-function-declaration]
+../src/helloworld.c:426:12: warning: unused variable 'r' [-Wunused-variable]
+../src/helloworld.c:426:9: warning: unused variable 'p' [-Wunused-variable]
+../src/helloworld.c:426:6: warning: unused variable 'j' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+18:22:12 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:153:2: error: 'inc1' undeclared (first use in this function)
+../src/helloworld.c:153:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:154:2: error: 'inc2' undeclared (first use in this function)
+../src/helloworld.c:155:2: error: 'numOfFlags' undeclared (first use in this function)
+../src/helloworld.c:155:15: error: 'NUMOFMINES' undeclared (first use in this function)
+../src/helloworld.c:156:2: error: 'flagTrue' undeclared (first use in this function)
+../src/helloworld.c:157:2: error: 'numOfMines' undeclared (first use in this function)
+../src/helloworld.c:158:2: error: 'firstTimeCenter' undeclared (first use in this function)
+../src/helloworld.c:206:4: warning: implicit declaration of function 'drawMap' [-Wimplicit-function-declaration]
+../src/helloworld.c:152:12: warning: unused variable 'r' [-Wunused-variable]
+../src/helloworld.c:152:9: warning: unused variable 'p' [-Wunused-variable]
+../src/helloworld.c:152:6: warning: unused variable 'j' [-Wunused-variable]
+make: *** [src/helloworld.o] Error 1
+18:23:44 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:186:4: warning: implicit declaration of function 'drawMap' [-Wimplicit-function-declaration]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o ./src/vga_periph_mem.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/helloworld.o: In function `main':
+C:\Users\stefa\Desktop\VI-sem\LPRS2\lprs2-TowerDefence\SDK\SDK_Workspace\hello_world\Debug/../src/helloworld.c:186: undefined reference to `drawMap'
+collect2: ld returned 1 exit status
+make: *** [hello_world.elf] Error 1
+18:24:54 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:187:4: warning: implicit declaration of function 'drawMap' [-Wimplicit-function-declaration]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o ./src/vga_periph_mem.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/helloworld.o: In function `main':
+C:\Users\stefa\Desktop\VI-sem\LPRS2\lprs2-TowerDefence\SDK\SDK_Workspace\hello_world\Debug/../src/helloworld.c:187: undefined reference to `drawMap'
+collect2: ld returned 1 exit status
+make: *** [hello_world.elf] Error 1
+18:25:04 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o ./src/vga_periph_mem.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  15468	   1348	   2928	  19744	   4d20	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck hello_world.elf -hw ../../TowerDefence_hw_platform/system.xml -pe microblaze_0  |tee "hello_world.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../TowerDefence_hw_platform/system.xml -pe
+microblaze_0 hello_world.elf 
+
+ELF file	: hello_world.elf
+elfcheck passed.
+'Finished building: hello_world.elf.elfcheck'
+' '
+18:25:17 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o ./src/vga_periph_mem.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  15468	   1348	   2928	  19744	   4d20	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck hello_world.elf -hw ../../TowerDefence_hw_platform/system.xml -pe microblaze_0  |tee "hello_world.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../TowerDefence_hw_platform/system.xml -pe
+microblaze_0 hello_world.elf 
+
+ELF file	: hello_world.elf
+elfcheck passed.
+'Finished building: hello_world.elf.elfcheck'
+' '
+18:26:27 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o ./src/vga_periph_mem.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  15468	   1348	   2560	  19376	   4bb0	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck hello_world.elf -hw ../../TowerDefence_hw_platform/system.xml -pe microblaze_0  |tee "hello_world.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../TowerDefence_hw_platform/system.xml -pe
+microblaze_0 hello_world.elf 
+
+ELF file	: hello_world.elf
+elfcheck passed.
+'Finished building: hello_world.elf.elfcheck'
+' '
+18:30:58 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o ./src/vga_periph_mem.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20416	   1356	   2556	  24328	   5f08	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck hello_world.elf -hw ../../TowerDefence_hw_platform/system.xml -pe microblaze_0  |tee "hello_world.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../TowerDefence_hw_platform/system.xml -pe
+microblaze_0 hello_world.elf 
+
+ELF file	: hello_world.elf
+elfcheck passed.
+'Finished building: hello_world.elf.elfcheck'
+' '
+18:32:10 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o ./src/vga_periph_mem.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20520	   1356	   2556	  24432	   5f70	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck hello_world.elf -hw ../../TowerDefence_hw_platform/system.xml -pe microblaze_0  |tee "hello_world.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../TowerDefence_hw_platform/system.xml -pe
+microblaze_0 hello_world.elf 
+
+ELF file	: hello_world.elf
+elfcheck passed.
+'Finished building: hello_world.elf.elfcheck'
+' '
+18:33:32 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o ./src/vga_periph_mem.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20520	   1356	   2556	  24432	   5f70	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck hello_world.elf -hw ../../TowerDefence_hw_platform/system.xml -pe microblaze_0  |tee "hello_world.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../TowerDefence_hw_platform/system.xml -pe
+microblaze_0 hello_world.elf 
+
+ELF file	: hello_world.elf
+elfcheck passed.
+'Finished building: hello_world.elf.elfcheck'
+' '
