@@ -1,0 +1,131 @@
+11:23:48 **** Incremental Build of configuration Debug for project hello_world ****
+make all 
+make: Ništa za napraviti za `all'.
+11:30:27 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+'Finished building libraries'
+11:30:46 **** Incremental Build of configuration Debug for project hello_world ****
+make all 
+make: Ništa za napraviti za `all'.
+11:31:13 **** Incremental Build of configuration Debug for project hello_world ****
+make all 
+make: Ništa za napraviti za `all'.
+11:31:18 **** Incremental Build of configuration Debug for project hello_world ****
+make all 
+make: Ništa za napraviti za `all'.
+11:31:28 **** Incremental Build of configuration Debug for project hello_world ****
+make all 
+make: Ništa za napraviti za `all'.
+11:33:20 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+'Finished building libraries'
+11:52:19 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+make: Ništa za napraviti za `all'.
+11:52:20 **** Incremental Build of configuration Debug for project hello_world ****
+make all 
+make: Ništa za napraviti za `all'.
+11:52:35 **** Auto Build of project standalone_bsp_0 ****
+make -k all 
+'Finished building libraries'
+11:52:36 **** Incremental Build of configuration Debug for project hello_world ****
+make all 
+make: Ništa za napraviti za `all'.
+11:52:38 **** Incremental Build of configuration Debug for project hello_world ****
+make all 
+make: Ništa za napraviti za `all'.
+11:53:01 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+make: Ništa za napraviti za `all'.
+12:04:22 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'printOutEndOfGame':
+../src/helloworld.c:90:6: warning: implicit declaration of function 'drawMap' [-Wimplicit-function-declaration]
+../src/helloworld.c: In function 'makeTable':
+../src/helloworld.c:191:50: warning: unused variable 'm' [-Wunused-variable]
+../src/helloworld.c: At top level:
+../src/helloworld.c:286:6: warning: conflicting types for 'drawMap' [enabled by default]
+../src/helloworld.c:90:6: note: previous implicit declaration of 'drawMap' was here
+../src/helloworld.c: In function 'move':
+../src/helloworld.c:361:6: warning: unused variable 'prethodnoStanje' [-Wunused-variable]
+../src/helloworld.c:360:16: warning: unused variable 'ib' [-Wunused-variable]
+../src/helloworld.c:360:12: warning: unused variable 'ic' [-Wunused-variable]
+../src/helloworld.c:360:9: warning: unused variable 'y' [-Wunused-variable]
+../src/helloworld.c:360:6: warning: unused variable 'x' [-Wunused-variable]
+../src/helloworld.c:359:37: warning: variable 'oldEndY' set but not used [-Wunused-but-set-variable]
+../src/helloworld.c:359:28: warning: unused variable 'oldEndX' [-Wunused-variable]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o ./src/vga_periph_mem.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  54520	   1356	   2476	  58352	   e3f0	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck hello_world.elf -hw ../../TowerDefence_hw_platform/system.xml -pe microblaze_0  |tee "hello_world.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.6 Build EDK_P.68d
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../TowerDefence_hw_platform/system.xml -pe
+microblaze_0 hello_world.elf 
+
+ELF file	: hello_world.elf
+elfcheck passed.
+'Finished building: hello_world.elf.elfcheck'
+' '
+12:04:48 **** Auto Build of configuration Debug for project hello_world ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'printOutEndOfGame':
+../src/helloworld.c:90:6: warning: implicit declaration of function 'drawMap' [-Wimplicit-function-declaration]
+../src/helloworld.c: In function 'makeTable':
+../src/helloworld.c:191:50: warning: unused variable 'm' [-Wunused-variable]
+../src/helloworld.c: At top level:
+../src/helloworld.c:286:6: warning: conflicting types for 'drawMap' [enabled by default]
+../src/helloworld.c:90:6: note: previous implicit declaration of 'drawMap' was here
+../src/helloworld.c: In function 'move':
+../src/helloworld.c:361:6: warning: unused variable 'prethodnoStanje' [-Wunused-variable]
+../src/helloworld.c:360:16: warning: unused variable 'ib' [-Wunused-variable]
+../src/helloworld.c:360:12: warning: unused variable 'ic' [-Wunused-variable]
+../src/helloworld.c:360:9: warning: unused variable 'y' [-Wunused-variable]
+../src/helloworld.c:360:6: warning: unused variable 'x' [-Wunused-variable]
+../src/helloworld.c:359:37: warning: variable 'oldEndY' set but not used [-Wunused-but-set-variable]
+../src/helloworld.c:359:28: warning: unused variable 'oldEndX' [-Wunused-variable]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: hello_world.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "hello_world.elf"  ./src/helloworld.o ./src/platform.o ./src/vga_periph_mem.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_world.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size hello_world.elf  |tee "hello_world.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  54520	   1356	   2476	  58352	   e3f0	hello_world.elf
+'Finished building: hello_world.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck hello_world.elf -hw ../../TowerDefence_hw_platform/system.xml -pe microblaze_0  |tee "hello_world.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.6 Build EDK_P.68d
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../TowerDefence_hw_platform/system.xml -pe
+microblaze_0 hello_world.elf 
+
+ELF file	: hello_world.elf
+elfcheck passed.
+'Finished building: hello_world.elf.elfcheck'
+' '

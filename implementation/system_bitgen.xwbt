@@ -1,0 +1,7 @@
+INFILE=D:\f4-TD\TowerDefence\implementation\system.ncd
+OUTFILE=D:\f4-TD\TowerDefence\implementation\system.bit
+FAMILY=Spartan6
+PART=xc6slx45-2fgg676
+WORKINGDIR=D:\f4-TD\TowerDefence\implementation
+LICENSE=ISE
+USER_INFO=209858334_178080923_210593072_268
