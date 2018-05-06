@@ -4,6 +4,9 @@
 <scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="xilinx.gnu.mb.exe.debug.1698457996;xilinx.gnu.mb.exe.debug.1698457996.">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="c:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/include"/>
+<includePath path="c:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/include-fixed"/>
+<includePath path="c:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include"/>
 <includePath path="c:\xilinx\14.6\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/include"/>
 <includePath path="c:\xilinx\14.6\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/include-fixed"/>
 <includePath path="c:\xilinx\14.6\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include"/>
@@ -13,6 +16,7 @@
 <definedSymbol symbol="__GNUC_MINOR__=6"/>
 <definedSymbol symbol="__GNUC_PATCHLEVEL__=4"/>
 <definedSymbol symbol="__VERSION__=&quot;4.6.4 20120924 (Xilinx 14.6 2013.2 Build EDK_P 25 Mar 2013)&quot;"/>
+<definedSymbol symbol="__VERSION__=&quot;4.6.4 20120924 (Xilinx 14.1 Build EDK_P.13 28 Sep 2013)&quot;"/>
 <definedSymbol symbol="__FINITE_MATH_ONLY__=0"/>
 <definedSymbol symbol="__SIZEOF_INT__=4"/>
 <definedSymbol symbol="__SIZEOF_LONG__=4"/>
@@ -398,6 +402,9 @@
 </instance>
 <instance id="xilinx.gnu.mb.exe.debug.1698457996;xilinx.gnu.mb.exe.debug.1698457996.;xilinx.gnu.mb.c.toolchain.compiler.debug.1837988109;xilinx.gnu.compiler.input.1346817751">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="c:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/include"/>
+<includePath path="c:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/include-fixed"/>
+<includePath path="c:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include"/>
 <includePath path="c:\xilinx\14.6\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/include"/>
 <includePath path="c:\xilinx\14.6\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/include-fixed"/>
 <includePath path="c:\xilinx\14.6\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include"/>
@@ -407,6 +414,7 @@
 <definedSymbol symbol="__GNUC_MINOR__=6"/>
 <definedSymbol symbol="__GNUC_PATCHLEVEL__=4"/>
 <definedSymbol symbol="__VERSION__=&quot;4.6.4 20120924 (Xilinx 14.6 2013.2 Build EDK_P 25 Mar 2013)&quot;"/>
+<definedSymbol symbol="__VERSION__=&quot;4.6.4 20120924 (Xilinx 14.1 Build EDK_P.13 28 Sep 2013)&quot;"/>
 <definedSymbol symbol="__FINITE_MATH_ONLY__=0"/>
 <definedSymbol symbol="__SIZEOF_INT__=4"/>
 <definedSymbol symbol="__SIZEOF_LONG__=4"/>
