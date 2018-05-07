@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="18" version="2.0">
 <workbenchAdvisor/>
-<window height="735" maximized="true" width="697" x="676" y="0">
+<window height="1040" maximized="true" width="960" x="960" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -39,7 +39,7 @@
 </editorArea>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="helloworld.c" partName="helloworld.c" path="D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/hello_world/src/helloworld.c" title="helloworld.c" tooltip="hello_world/src/helloworld.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/hello_world/src/helloworld.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4367" selectionTopPixel="1961"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6221" selectionTopPixel="1616"/>
 </editor>
 </editors>
 <views>
@@ -87,6 +87,7 @@
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
 <category IMemento.internal.id="Warnings (4 items)"/>
+<category IMemento.internal.id="Errors"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="963"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -168,6 +169,7 @@
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.ui.views.PropertySheet"/>
 <view id="org.eclipse.tm.terminal.view.TerminalView"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
 <fastViewBars>
 <fastViewBar fastViewLocation="131072" id="topRight" orientation="512" selectedTabId="org.eclipse.ui.views.ContentOutline" style="0">
 <fastViews>
@@ -175,21 +177,18 @@
 <view id="org.eclipse.cdt.make.ui.views.MakeView" ratio="0.3"/>
 </fastViews>
 </fastViewBar>
-<fastViewBar fastViewLocation="16384" id="topLeft" orientation="512" selectedTabId="org.eclipse.ui.navigator.ProjectExplorer" style="0">
-<fastViews>
-<view id="org.eclipse.ui.navigator.ProjectExplorer" ratio="0.29978472"/>
-</fastViews>
-</fastViewBar>
 </fastViewBars>
 <layout>
 <mainWindow>
 <info folder="true" part="topLeft">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
+<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
 <page content="org.eclipse.cdt.ui.CView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1aad40a0" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="topLeft">
@@ -234,76 +233,13 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world/src/minesweeper_sprites.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world/src/helloworld.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world/src/platform.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.hw.ui.HwSpecXMLEditor" path="/TowerDefence_hw_platform/system.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world/src/towerdefence_sprites.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world/src/minesweeper_sprites.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/hello_world/src/towerdefence_sprites.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/microblaze_0/include/xil_printf.h"/>
+<editor factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="C:\Xilinx\14.6\ISE_DS\EDK\gnu\microblaze\nt\microblaze-xilinx-elf\include\stdio.h" project="hello_world"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/standalone_bsp_0/microblaze_0/libsrc/standalone_v3_10_a/src/xil_testcache.c"/>
 </editors>
-<item historyLabel="system.xml" index="3"/>
-<item historyLabel="helloworld.c" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="helloworld.c" index="1">
-<position info="not_deleted" x="1554" y="0"/>
-</item>
-<item historyLabel="helloworld.c" index="1">
-<position/>
-</item>
-<item historyLabel="helloworld.c" index="1">
-<position info="not_deleted" x="3015" y="49"/>
-</item>
-<item historyLabel="helloworld.c" index="1">
-<position info="not_deleted" x="4038" y="114"/>
-</item>
-<item historyLabel="helloworld.c" index="1">
-<position info="not_deleted" x="4387" y="42"/>
-</item>
-<item historyLabel="helloworld.c" index="1">
-<position info="not_deleted" x="4695" y="0"/>
-</item>
-<item historyLabel="helloworld.c" index="1">
-<position info="not_deleted" x="5634" y="0"/>
-</item>
-<item historyLabel="platform.c" index="2">
-<position/>
-</item>
-<item historyLabel="helloworld.c" index="1">
-<position info="not_deleted" x="5634" y="0"/>
-</item>
-<item historyLabel="helloworld.c" index="1">
-<position info="not_deleted" x="2014" y="0"/>
-</item>
-<item historyLabel="helloworld.c" index="1">
-<position info="not_deleted" x="3115" y="0"/>
-</item>
-<item historyLabel="minesweeper_sprites.h" index="0">
-<position/>
-</item>
-<item historyLabel="towerdefence_sprites.h" index="4">
-<position/>
-</item>
-<item historyLabel="minesweeper_sprites.h" index="0">
-<position/>
-</item>
-<item historyLabel="towerdefence_sprites.h" index="4">
-<position/>
-</item>
-<item historyLabel="minesweeper_sprites.h" index="0">
-<position/>
-</item>
-<item historyLabel="towerdefence_sprites.h" index="4">
-<position/>
-</item>
-<item historyLabel="helloworld.c" index="1">
-<position info="not_deleted" x="3115" y="0"/>
-</item>
-<item historyLabel="helloworld.c" index="1">
-<position/>
-</item>
-<item historyLabel="helloworld.c" index="1">
-<position info="not_deleted" x="4632" y="20"/>
-</item>
-<item historyLabel="minesweeper_sprites.h" index="0">
-<position info="not_deleted" x="452" y="19"/>
-</item>
 <item historyLabel="helloworld.c" index="1">
 <position info="not_deleted" x="4632" y="20"/>
 </item>
@@ -352,7 +288,7 @@
 <item historyLabel="helloworld.c" index="1">
 <position info="not_deleted" x="5373" y="1"/>
 </item>
-<item historyLabel="towerdefence_sprites.h" index="4">
+<item historyLabel="towerdefence_sprites.h" index="3">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="helloworld.c" index="1">
@@ -364,7 +300,7 @@
 <item historyLabel="helloworld.c" index="1">
 <position info="not_deleted" x="5611" y="0"/>
 </item>
-<item historyLabel="towerdefence_sprites.h" index="4">
+<item historyLabel="towerdefence_sprites.h" index="3">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="helloworld.c" index="1">
@@ -382,8 +318,77 @@
 <item historyLabel="helloworld.c" index="1">
 <position info="not_deleted" x="6192" y="0"/>
 </item>
-<item active="true" historyLabel="helloworld.c" index="1">
+<item historyLabel="helloworld.c" index="1">
 <position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="minesweeper_sprites.h" index="4">
+<position/>
+</item>
+<item historyLabel="helloworld.c" index="1">
+<position/>
+</item>
+<item historyLabel="towerdefence_sprites.h" index="5">
+<position/>
+</item>
+<item historyLabel="helloworld.c" index="1">
+<position info="not_deleted" x="3983" y="0"/>
+</item>
+<item historyLabel="xil_printf.h" index="6">
+<position info="not_deleted" x="2394" y="10"/>
+</item>
+<item historyLabel="helloworld.c" index="1">
+<position info="not_deleted" x="3944" y="0"/>
+</item>
+<item historyLabel="stdio.h" index="7">
+<position info="not_deleted" x="7093" y="38"/>
+</item>
+<item historyLabel="helloworld.c" index="1">
+<position info="not_deleted" x="3943" y="0"/>
+</item>
+<item historyLabel="xil_testcache.c" index="8">
+<position info="not_deleted" x="3969" y="10"/>
+</item>
+<item historyLabel="helloworld.c" index="1">
+<position info="not_deleted" x="3943" y="0"/>
+</item>
+<item historyLabel="helloworld.c" index="1">
+<position info="not_deleted" x="6107" y="0"/>
+</item>
+<item historyLabel="helloworld.c" index="1">
+<position/>
+</item>
+<item historyLabel="towerdefence_sprites.h" index="5">
+<position info="not_deleted" x="151" y="0"/>
+</item>
+<item historyLabel="helloworld.c" index="1">
+<position info="not_deleted" x="4095" y="0"/>
+</item>
+<item historyLabel="towerdefence_sprites.h" index="5">
+<position info="not_deleted" x="235" y="20"/>
+</item>
+<item historyLabel="helloworld.c" index="1">
+<position/>
+</item>
+<item historyLabel="towerdefence_sprites.h" index="5">
+<position info="not_deleted" x="235" y="20"/>
+</item>
+<item historyLabel="helloworld.c" index="1">
+<position info="not_deleted" x="4666" y="0"/>
+</item>
+<item historyLabel="towerdefence_sprites.h" index="5">
+<position info="not_deleted" x="935" y="0"/>
+</item>
+<item historyLabel="minesweeper_sprites.h" index="4">
+<position info="not_deleted" x="4" y="0"/>
+</item>
+<item historyLabel="towerdefence_sprites.h" index="5">
+<position info="not_deleted" x="283" y="0"/>
+</item>
+<item historyLabel="minesweeper_sprites.h" index="4">
+<position info="not_deleted" x="4" y="0"/>
+</item>
+<item active="true" historyLabel="helloworld.c" index="1">
+<position info="not_deleted" x="4666" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -408,14 +413,23 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="minesweeper_sprites.h" tooltip="hello_world/src/minesweeper_sprites.h">
+<persistable path="/hello_world/src/minesweeper_sprites.h"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="towerdefence_sprites.h" tooltip="hello_world/src/towerdefence_sprites.h">
 <persistable path="/hello_world/src/towerdefence_sprites.h"/>
 </file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xil_testcache.c" tooltip="standalone_bsp_0/microblaze_0/libsrc/standalone_v3_10_a/src/xil_testcache.c">
+<persistable path="/standalone_bsp_0/microblaze_0/libsrc/standalone_v3_10_a/src/xil_testcache.c"/>
+</file>
+<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stdio.h" tooltip="C:\Xilinx\14.6\ISE_DS\EDK\gnu\microblaze\nt\microblaze-xilinx-elf\include\stdio.h">
+<persistable path="C:\Xilinx\14.6\ISE_DS\EDK\gnu\microblaze\nt\microblaze-xilinx-elf\include\stdio.h" project="hello_world"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xil_printf.h" tooltip="standalone_bsp_0/microblaze_0/include/xil_printf.h">
+<persistable path="/standalone_bsp_0/microblaze_0/include/xil_printf.h"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="platform.c" tooltip="hello_world/src/platform.c">
 <persistable path="/hello_world/src/platform.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="minesweeper_sprites.h" tooltip="hello_world/src/minesweeper_sprites.h">
-<persistable path="/hello_world/src/minesweeper_sprites.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="helloworld.c" tooltip="hello_world/src/helloworld.c">
 <persistable path="/hello_world/src/helloworld.c"/>

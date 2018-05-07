@@ -100,3 +100,82 @@ Failed to Scan JTAG Chain
 13:11:49.251 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
 13:12:24.256 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
 13:12:34.118 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+13:48:37.274 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+13:49:52.646 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+13:54:30.127 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+13:56:27.989 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+13:56:54.678 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+13:57:19.052 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+13:57:40.804 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+13:58:09.538 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+13:58:25.175 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+13:58:42.318 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+13:59:03.494 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:04:40.146 WARN  - Terminating existing sessions on processor microblaze_0 
+14:04:41.579 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:08:32.756 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:08:59.218 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:10:33.636 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:12:08.096 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:15:03.128 WARN  - Terminating existing sessions on processor microblaze_0 
+14:15:04.397 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:15:53.195 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:16:13.259 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:17:13.026 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:17:31.792 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:20:18.211 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:22:52.335 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:24:02.609 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:24:47.952 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:25:45.610 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:26:44.867 INFO  - Time out for XMD transaction is 60000
+If you want to increase the timeout value, goto Windows-> Preferences -> Xilinx SDK -> XMD Startup 
+14:26:44.867 ERROR - Timeout occured while waiting to get reply for command "set_cur_target 0" 
+14:26:45.194 ERROR - Unexpected error while launching program. java.lang.RuntimeException: Debug Operation Not Supported on the Target
+
+	at com.xilinx.sdk.targetmanager.internal.TM.downloadELF(Unknown Source)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(Unknown Source)
+
+14:27:04.517 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:28:00.139 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:28:55.571 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:29:20.020 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:32:37.521 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:33:25.502 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:34:06.082 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:34:28.441 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:36:04.440 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:41:10.118 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:42:58.245 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:44:20.873 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:45:20.080 INFO  - Time out for XMD transaction is 60000
+If you want to increase the timeout value, goto Windows-> Preferences -> Xilinx SDK -> XMD Startup 
+14:45:20.080 ERROR - Timeout occured while waiting to get reply for command "set_cur_target 0" 
+14:45:20.414 ERROR - Unexpected error while launching program. java.lang.RuntimeException: Debug Operation Not Supported on the Target
+
+	at com.xilinx.sdk.targetmanager.internal.TM.downloadELF(Unknown Source)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(Unknown Source)
+
+14:46:37.778 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:47:17.454 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:48:10.379 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:49:04.542 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:50:31.721 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:50:46.268 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:51:46.380 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:52:41.322 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:53:16.741 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:54:18.388 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:05:13.069 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:05:36.861 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:05:56.277 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:07:23.142 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:12:45.618 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:13:12.418 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:14:22.096 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:14:49.410 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:15:21.306 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:15:41.453 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:16:20.671 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:16:49.861 INFO  - FPGA configured successfully with bitstream "D:/ra234-2013/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:17:08.798 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
