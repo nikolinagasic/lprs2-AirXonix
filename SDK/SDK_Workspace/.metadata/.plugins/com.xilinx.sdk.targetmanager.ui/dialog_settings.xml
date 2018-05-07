@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="D:\f4-TD\TowerDefence\SDK\SDK_Workspace\TowerDefence_hw_platform\system.bit" key="TowerDefence_hw_platform-bitFile"/>
-	<item value="D:\f4-TD\TowerDefence\SDK\SDK_Workspace\hello_world\Debug\hello_world.elf" key="TowerDefence_hw_platform-microblaze_0-initElf"/>
-	<item value="D:\f4-TD\TowerDefence\SDK\SDK_Workspace\TowerDefence_hw_platform\system_bd.bmm" key="TowerDefence_hw_platform-bmmFile"/>
+	<item value="D:\ra234-2013\lprs2-TowerDefence\SDK\SDK_Workspace\TowerDefence_hw_platform\system.bit" key="TowerDefence_hw_platform-bitFile"/>
+	<item value="D:\ra234-2013\lprs2-TowerDefence\SDK\SDK_Workspace\hello_world\Debug\hello_world.elf" key="TowerDefence_hw_platform-microblaze_0-initElf"/>
+	<item value="D:\ra234-2013\lprs2-TowerDefence\SDK\SDK_Workspace\TowerDefence_hw_platform\system_bd.bmm" key="TowerDefence_hw_platform-bmmFile"/>
 </section>
