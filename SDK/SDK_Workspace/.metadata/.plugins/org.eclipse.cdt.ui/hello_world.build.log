@@ -1,10 +1,8 @@
-16:15:48 **** Build of configuration Debug for project hello_world ****
+22:41:31 **** Build of configuration Debug for project hello_world ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
-../src/helloworld.c: In function 'drawMap':
-../src/helloworld.c:174:4: warning: 'return' with a value, in function returning void [enabled by default]
 'Finished building: ../src/helloworld.c'
 ' '
 'Building file: ../src/platform.c'
@@ -25,13 +23,13 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -m
 'Invoking: MicroBlaze Print Size'
 mb-size hello_world.elf  |tee "hello_world.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  28624	    664	   2432	  31720	   7be8	hello_world.elf
+  36388	    664	   2092	  39144	   98e8	hello_world.elf
 'Finished building: hello_world.elf.size'
 ' '
 'Invoking: Xilinx ELF Check'
 elfcheck hello_world.elf -hw ../../TowerDefence_hw_platform/system.xml -pe microblaze_0  |tee "hello_world.elf.elfcheck"
 elfcheck
-Xilinx EDK 14.6 Build EDK_P.68d
+Xilinx EDK 14.7 Build EDK_P.20131013
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 Command Line: elfcheck -hw ../../TowerDefence_hw_platform/system.xml -pe
@@ -42,5 +40,5 @@ elfcheck passed.
 'Finished building: hello_world.elf.elfcheck'
 ' '
 
-16:15:50 Build Finished (took 1s.887ms)
+22:41:34 Build Finished (took 3s.416ms)
 
