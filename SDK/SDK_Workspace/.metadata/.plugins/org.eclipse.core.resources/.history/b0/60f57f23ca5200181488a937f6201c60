@@ -57,19 +57,30 @@
 #define TOWERU '1'
 #define TOWERD '2'
 #define GRASS 'G'
-#define DIRTPREVIOUS 'G1'
+#define DIRTPREVIOUS 'P'
 #define DIRT 'D'
 #define BUSH 'B'
+#define CREEP 'C'
 #define NUMOFTOWERS 8
 #define NUMOFBUSHES 20
+#define LAKE1 '3'
+#define LAKE2 '4'
+#define LAKE3 '5'
+#define LAKE4 '6'
+#define LAKE5 '7'
+#define LAKE6 '8'
+#define SPOT 'S'
+#define SELECTEDSPOT 'X'
+
 
 int i, x, y, ii, oi, R, G, B, RGB, kolona, red, RGBgray;
 int randomCounter = 50;
 
 char map[SIZEROW][SIZECOLUMN];
 int res = 0;
-
-
+int rowFields[7]={5,5,3,10,10,7,5};
+int columnFields[7]={3,5,7,9,12,14,17};
+int currentI = 0;
 void init(){
 	VGA_PERIPH_MEM_mWriteMemory(
 				XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x00, 0x0); // direct mode   0
@@ -131,19 +142,19 @@ void drawMap(){
 	int row,column;
 	for (row = 0; row < SIZEROW; row++) {
 		for (column = 0; column < SIZECOLUMN; column++) {
-			if (map1[row][column] == BUSH){
-				map1[row][column] == DIRTPREVIOUS;
+			if (map1[row][column] == CREEP){
+				map1[row][column] = DIRTPREVIOUS;
 				if(map1[row+1][column]==DIRT){
-					map1[row+1][column]= BUSH;
+					map1[row+1][column]= CREEP;
 				}
 				if(map1[row-1][column]==DIRT){
-					map1[row-1][column]= BUSH;
+					map1[row-1][column]= CREEP;
 				}
 				if(map1[row][column+1]==DIRT){
-					map1[row][column+1]= BUSH;
+					map1[row][column+1]= CREEP;
 				}
 				if(map1[row][column-1]==DIRT){
-					map1[row][column-1]= BUSH;
+					map1[row][column-1]= CREEP;
 				}
 
 
@@ -160,6 +171,7 @@ void drawMap(){
 					map1[row][column-1]= DIRT;
 				}
 
+			return 0;
 			}
 		}
 	}
@@ -198,10 +210,8 @@ int main() {
 	}*/
 
 
-	int i;
 	//drawing a map
 	while(1){
-
 		for (row = 0; row < SIZEROW; row++) {
 			for (column = 0; column < SIZECOLUMN; column++) {
 				//drawSprite(48, 0, 0, 0, 16,32);
@@ -212,26 +222,86 @@ int main() {
 				if (map1[row][column] == DIRT || map1[row][column]==DIRTPREVIOUS) {
 					drawSprite(0, 0, column * 16, row * 16, 16, 16);
 				}
-				if (map1[row][column] == TOWERU) {
+				/*if (map1[row][column] == TOWERU) {
+					drawSprite(32, 0, column * 16, row * 16, 16, 16);
+				}*/
+				/*if (map1[row][column] == TOWERD) {
+					drawSprite(32, 16, column * 16, row * 16, 16, 16);
+				}*/
+				if (map1[row][column] == BUSH){
 					drawSprite(32, 0, column * 16, row * 16, 16, 16);
 				}
-				if (map1[row][column] == TOWERD) {
+				if (map1[row][column] == CREEP){
+					drawSprite(48, 0, column * 16, row * 16, 16, 16);
+				}
+				if (map1[row][column] == LAKE1){
+					drawSprite(0, 16, column * 16, row * 16, 16, 16);
+				}
+				if (map1[row][column] == LAKE2){
+					drawSprite(16, 16, column * 16, row * 16, 16, 16);
+				}
+				if (map1[row][column] == LAKE3){
 					drawSprite(32, 16, column * 16, row * 16, 16, 16);
 				}
-				if (map1[row][column] == BUSH){
+				if (map1[row][column] == LAKE4){
+					drawSprite(0, 32, column * 16, row * 16, 16, 16);
+				}
+				if (map1[row][column] == LAKE5){
+					drawSprite(16, 32, column * 16, row * 16, 16, 16);
+				}
+				if (map1[row][column] == LAKE6){
+					drawSprite(32, 32, column * 16, row * 16, 16, 16);
+				}
+				if (map1[row][column] == SPOT){
 					drawSprite(64, 0, column * 16, row * 16, 16, 16);
 				}
+				if (map1[row][column] == SELECTEDSPOT){
+					drawSprite(64, 16, column * 16, row * 16, 16, 16);
+				}
+
+				if (map1[row][column] == TOWERU){
+					drawSprite(64,32,column*16,row*16,16,16);
+				}
+
+
+
+
+
+
+
 
 			}
-			drawMap();
+
+
 
 
 		}
-		for(i= 0;i<100000000000;i++){}
+
+					if((Xil_In32(XPAR_MY_PERIPHERAL_0_BASEADDR) & RIGHT) == 0){
+						if(currentI<6){
+						map1[rowFields[currentI]][columnFields[currentI]] = SPOT;
+						currentI++;
+						map1[rowFields[currentI]][columnFields[currentI]] = SELECTEDSPOT;
+						}
+
+					}
 
 
+					if((Xil_In32(XPAR_MY_PERIPHERAL_0_BASEADDR) & LEFT) == 0){
+						if(currentI>0){
+						map1[rowFields[currentI]][columnFields[currentI]] = SPOT;
+						currentI--;
+						map1[rowFields[currentI]][columnFields[currentI]] = SELECTEDSPOT;
+						}
+						}
+					if((Xil_In32(XPAR_MY_PERIPHERAL_0_BASEADDR) & CENTER) == 0){
+						map1[rowFields[currentI]][columnFields[currentI]] = TOWERU;
+					}
+
+		drawMap();
+		//cleanup_platform();
 	}
-	cleanup_platform();
+
 
 	return 0;
 }

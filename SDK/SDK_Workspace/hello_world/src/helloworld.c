@@ -255,9 +255,13 @@ int main() {
 				if (map1[row][column] == SPOT){
 					drawSprite(64, 0, column * 16, row * 16, 16, 16);
 				}
+				if (map1[row][column] == SELECTEDSPOT){
+					drawSprite(64, 16, column * 16, row * 16, 16, 16);
+				}
 
-
-
+				if (map1[row][column] == TOWERU){
+					drawSprite(64,32,column*16,row*16,16,16);
+				}
 
 
 
@@ -272,10 +276,14 @@ int main() {
 
 
 		}
-		drawSprite(64, 16, columnFields[currentI] * 16, rowFields[currentI] * 16, 16, 16);
+
 					if((Xil_In32(XPAR_MY_PERIPHERAL_0_BASEADDR) & RIGHT) == 0){
 						if(currentI<6){
+						if(map1[rowFields[currentI]][columnFields[currentI]] != TOWERU){
+													map1[rowFields[currentI]][columnFields[currentI]] = SPOT;
+						}
 						currentI++;
+						map1[rowFields[currentI]][columnFields[currentI]] = SELECTEDSPOT;
 						}
 
 					}
@@ -283,9 +291,17 @@ int main() {
 
 					if((Xil_In32(XPAR_MY_PERIPHERAL_0_BASEADDR) & LEFT) == 0){
 						if(currentI>0){
+						if(map1[rowFields[currentI]][columnFields[currentI]] != TOWERU){
+							map1[rowFields[currentI]][columnFields[currentI]] = SPOT;
+						}
 						currentI--;
+						map1[rowFields[currentI]][columnFields[currentI]] = SELECTEDSPOT;
 						}
 						}
+					if((Xil_In32(XPAR_MY_PERIPHERAL_0_BASEADDR) & CENTER) == 0){
+						map1[rowFields[currentI]][columnFields[currentI]] = TOWERU;
+					}
+
 		drawMap();
 		//cleanup_platform();
 	}

@@ -344,3 +344,19 @@ If you want to increase the timeout value, goto Windows-> Preferences -> Xilinx 
 15:14:10.243 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
 15:19:50.194 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
 15:22:09.860 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:03:59.843 INFO  - Project TowerDefence_hw_platform's source hardware specification located at D:\f4-TD\TowerDefence\SDK\SDK_Export\hw\system.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+16:04:01.235 INFO  - Project TowerDefence_hw_platform's source hardware specification location will not be monitored anymore. 
+16:04:43.067 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+16:04:59.348 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/aa/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:07:51.308 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/aa/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:08:23.289 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/aa/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:13:11.934 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/aa/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:15:21.548 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/aa/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:16:05.888 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/aa/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:16:27.478 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
