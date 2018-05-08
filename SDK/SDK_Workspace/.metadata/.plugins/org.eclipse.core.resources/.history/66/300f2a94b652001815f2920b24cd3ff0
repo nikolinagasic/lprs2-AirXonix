@@ -1,0 +1,14 @@
+/*
+ * maps.h
+ *
+ *  Created on: 08.05.2018.
+ *      Author: student
+ */
+
+#ifndef MAPS_H_
+#define MAPS_H_
+#define SIZEROW 15
+#define SIZECOLUMN 20
+
+
+#endif /* MAPS_H_ */

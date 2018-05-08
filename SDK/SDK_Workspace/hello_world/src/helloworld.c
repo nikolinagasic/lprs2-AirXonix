@@ -40,9 +40,10 @@
 #include "xio.h"
 #include "xil_exception.h"
 #include "vga_periph_mem.h"
-#include "minesweeper_sprites.h"
+#include "towerdefence_sprites.h"
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>
+#include "maps.h"
 
 #define UP 0b01000000
 #define DOWN 0b00000100
@@ -52,20 +53,27 @@
 #define SW0 0b00000001
 #define SW1 0b00000010
 
-#define SIZEX 40
-#define SIZEY 30
+
 #define TOWERU '1'
 #define TOWERD '2'
 #define GRASS 'G'
+#define DIRTPREVIOUS 'P'
 #define DIRT 'D'
 #define BUSH 'B'
+#define CREEP 'C'
 #define NUMOFTOWERS 8
 #define NUMOFBUSHES 20
+#define LAKE1 '3'
+#define LAKE2 '4'
+#define LAKE3 '5'
+#define LAKE4 '6'
+#define LAKE5 '7'
+#define LAKE6 '8'
 
 int i, x, y, ii, oi, R, G, B, RGB, kolona, red, RGBgray;
 int randomCounter = 50;
 
-char map[SIZEX][SIZEY];
+char map[SIZEROW][SIZECOLUMN];
 int res = 0;
 
 
@@ -81,7 +89,7 @@ void init(){
 	VGA_PERIPH_MEM_mWriteMemory(
 			XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x10, 0xFFFFFF); // foreground 4
 	VGA_PERIPH_MEM_mWriteMemory(
-			XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x14, 0x0000FF); // background color 5
+			XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x14,0x008000); // background color 5
 	VGA_PERIPH_MEM_mWriteMemory(
 			XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x18, 0xFF0000); // frame color      6
 	VGA_PERIPH_MEM_mWriteMemory(
@@ -89,54 +97,12 @@ void init(){
 }
 
 //function that generates random game map
-void makeMap() {
-	int numOfTowers = NUMOFTOWERS, numOfBushes = NUMOFBUSHES;
-	int row, column, i, j, rnd;
+/*void makeMap() {
 
-	srand(randomCounter);
 
-	//generise teren
-	for (column = 0; column < SIZEX; column++) {
-		for (row = 0; row < SIZEY; row++) {
-			if (column == 15) map[column][row] = DIRT;
-			else map[column][row] = GRASS;
-		}
-	}
+}*/
 
-	//postavlja random tornjeve
-	while (numOfTowers > 0) {
-		rnd = rand() % 2;
-		int a_road = (SIZEX / 2) - 2;
-		int b_road = (SIZEX / 2) + 1;
-		if (rnd == 0) row = a_road;
-		else row = b_road;
 
-		map[column][row] = TOWERU;
-		map[column][row + 1] = TOWERD;
-		numOfTowers--;
-
-	}
-
-	while (numOfBushes > 0) {
-		row = rand() % SIZEX;
-		column = rand() % SIZEY;
-
-		if (map[column][row] == GRASS) {
-			map[column][row] = BUSH;
-			numOfBushes--;
-		}
-	}
-
-	//for testing
-
-	for (i = 0; i < SIZEX; i++) {
-		for (j = 0; j < SIZEY; j++) {
-			xil_printf("%c", map[i][j]);
-		}
-		xil_printf("\n");
-	}
-
-}
 
 //extracting pixel data from a picture for printing out on the display
 
@@ -149,26 +115,67 @@ void drawSprite(int in_x, int in_y, int out_x, int out_y, int width, int height)
 			oi = oy * 320 + ox;
 			ix = in_x + x;
 			iy = in_y + y;
-			ii = iy * minesweeper_sprites.width + ix;
-			R = minesweeper_sprites.pixel_data[ii
-					* minesweeper_sprites.bytes_per_pixel] >> 5;
-			G = minesweeper_sprites.pixel_data[ii
-					* minesweeper_sprites.bytes_per_pixel + 1] >> 5;
-			B = minesweeper_sprites.pixel_data[ii
-					* minesweeper_sprites.bytes_per_pixel + 2] >> 5;
+			ii = iy * towerdefence_sprites.width + ix;
+			R = towerdefence_sprites.pixel_data[ii
+					* towerdefence_sprites.bytes_per_pixel] >> 5;
+			G = towerdefence_sprites.pixel_data[ii
+					* towerdefence_sprites.bytes_per_pixel + 1] >> 5;
+			B = towerdefence_sprites.pixel_data[ii
+					* towerdefence_sprites.bytes_per_pixel + 2] >> 5;
 			R <<= 6;
 			G <<= 3;
 			RGB = R | G | B;
 
 			VGA_PERIPH_MEM_mWriteMemory(
 					XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + GRAPHICS_MEM_OFF
-							+ oi * 4, RGB);
+							+ oi * 4 , RGB);
 		}
 	}
 
 }
 
+void drawMap(){
+	int row,column;
+	for (row = 0; row < SIZEROW; row++) {
+		for (column = 0; column < SIZECOLUMN; column++) {
+			if (map1[row][column] == CREEP){
+				map1[row][column] = DIRTPREVIOUS;
+				if(map1[row+1][column]==DIRT){
+					map1[row+1][column]= CREEP;
+				}
+				if(map1[row-1][column]==DIRT){
+					map1[row-1][column]= CREEP;
+				}
+				if(map1[row][column+1]==DIRT){
+					map1[row][column+1]= CREEP;
+				}
+				if(map1[row][column-1]==DIRT){
+					map1[row][column-1]= CREEP;
+				}
+
+
+				if(map1[row+1][column]==DIRTPREVIOUS){
+					map1[row+1][column]= DIRT;
+				}
+				if(map1[row-1][column]==DIRTPREVIOUS){
+					map1[row-1][column]= DIRT;
+				}
+				if(map1[row][column+1]==DIRTPREVIOUS){
+					map1[row][column+1]= DIRT;
+				}
+				if(map1[row][column-1]==DIRTPREVIOUS){
+					map1[row][column-1]= DIRT;
+				}
+
+			return 0;
+			}
+		}
+	}
+}
+
+
 int main() {
+	int row, column;
 
 	init_platform();
 	VGA_PERIPH_MEM_mWriteMemory(
@@ -198,31 +205,58 @@ int main() {
 		}
 	}*/
 
-	makeMap();
 
+	int i,j,k;
 	//drawing a map
 	while(1){
-		for (kolona = 0; kolona < SIZEX; kolona++) {
-			for (red = 0; red < SIZEY; red++) {
-				drawSprite(0, 0, red * 16, kolona * 16, 16,16);
-				/*if (map[kolona][red] == GRASS){
-					drawSprite(16, 0, red * 16, kolona * 16, 16, 16);
+		for (row = 0; row < SIZEROW; row++) {
+			for (column = 0; column < SIZECOLUMN; column++) {
+				//drawSprite(48, 0, 0, 0, 16,32);
+				//if(column == 3)
+				if (map1[row][column] == GRASS){
+					drawSprite(16, 0, column * 16, row * 16, 16, 16);
 				}
-				if (map[kolona][red] == DIRT) {
-					drawSprite(0, 0, red * 16, kolona * 16, 16, 16);
+				if (map1[row][column] == DIRT || map1[row][column]==DIRTPREVIOUS) {
+					drawSprite(0, 0, column * 16, row * 16, 16, 16);
 				}
-				if (map[kolona][red] == TOWERU) {
-					drawSprite(32, 0, red * 16, kolona * 16, 16, 16);
+				/*if (map1[row][column] == TOWERU) {
+					drawSprite(32, 0, column * 16, row * 16, 16, 16);
+				}*/
+				/*if (map1[row][column] == TOWERD) {
+					drawSprite(32, 16, column * 16, row * 16, 16, 16);
+				}*/
+				if (map1[row][column] == BUSH){
+					drawSprite(32, 0, column * 16, row * 16, 16, 16);
 				}
-				if (map[kolona][red] == TOWERD) {
-					drawSprite(32, 16, red * 16, kolona * 16, 16, 16);
+				if (map1[row][column] == CREEP){
+					drawSprite(48, 0, column * 16, row * 16, 16, 16);
 				}
-				if (map[kolona][red] == BUSH){
-					drawSprite(64, 0, red * 16, kolona * 16, 16, 16);
+				if (map1[row][column] == LAKE1){
+					drawSprite(0, 16, column * 16, row * 16, 16, 16);
 				}
-				*/
+				if (map1[row][column] == LAKE2){
+					drawSprite(16, 16, column * 16, row * 16, 16, 16);
+				}
+				if (map1[row][column] == LAKE3){
+					drawSprite(32, 16, column * 16, row * 16, 16, 16);
+				}
+				if (map1[row][column] == LAKE4){
+					drawSprite(0, 32, column * 16, row * 16, 16, 16);
+				}
+				if (map1[row][column] == LAKE5){
+					drawSprite(16, 32, column * 16, row * 16, 16, 16);
+				}
+				if (map1[row][column] == LAKE6){
+					drawSprite(32, 32, column * 16, row * 16, 16, 16);
+				}
 			}
+
+
+
 		}
+		drawMap();
+		for(i= 0;i<100000/2;i++){}
+
 
 	}
 	cleanup_platform();
