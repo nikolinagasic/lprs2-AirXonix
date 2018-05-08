@@ -314,3 +314,33 @@ If you want to increase the timeout value, goto Windows-> Preferences -> Xilinx 
 14:11:22.865 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/NewFolder/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
 14:11:47.193 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/NewFolder/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
 14:12:27.558 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+14:16:50.771 INFO  - Project TowerDefence_hw_platform's source hardware specification located at D:\f4-TD\TowerDefence\SDK\SDK_Export\hw\system.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+14:16:52.192 INFO  - Copied contents of D:\f4-TD\TowerDefence\SDK\SDK_Export\hw\system.xml into \TowerDefence_hw_platform\system.xml. 
+14:16:52.207 INFO  - Copied contents of D:\f4-TD\TowerDefence\SDK\SDK_Export\hw\system.bit into \TowerDefence_hw_platform\system.bit. 
+14:16:52.207 INFO  - Copied contents of D:\f4-TD\TowerDefence\SDK\SDK_Export\hw\system_bd.bmm into \TowerDefence_hw_platform\system_bd.bmm. 
+14:16:52.613 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+14:16:54.563 INFO  - Updating hardware inferred compiler options for hello_world. 
+14:16:54.579 INFO  - Clearing existing target manager status. 
+14:16:56.888 INFO  - Workspace synchronized with the new hardware specification file. Cleaning dependent projects... 
+14:17:20.385 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:20:16.657 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:21:32.408 WARN  - Terminating existing sessions on processor microblaze_0 
+14:21:33.766 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:22:02.791 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:23:01.970 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:24:12.308 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:24:48.973 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:25:18.009 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:25:54.565 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:26:27.021 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:27:14.318 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:00:31.488 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:01:40.230 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:02:27.796 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:02:49.734 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:03:41.618 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:04:55.706 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:14:10.243 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:19:50.194 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:22:09.860 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/test/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 

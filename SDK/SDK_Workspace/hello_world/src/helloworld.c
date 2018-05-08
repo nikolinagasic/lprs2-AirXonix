@@ -69,14 +69,18 @@
 #define LAKE4 '6'
 #define LAKE5 '7'
 #define LAKE6 '8'
+#define SPOT 'S'
+#define SELECTEDSPOT 'X'
+
 
 int i, x, y, ii, oi, R, G, B, RGB, kolona, red, RGBgray;
 int randomCounter = 50;
 
 char map[SIZEROW][SIZECOLUMN];
 int res = 0;
-
-
+int rowFields[7]={5,5,3,10,10,7,5};
+int columnFields[7]={3,5,7,9,12,14,17};
+int currentI = 0;
 void init(){
 	VGA_PERIPH_MEM_mWriteMemory(
 				XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x00, 0x0); // direct mode   0
@@ -206,7 +210,6 @@ int main() {
 	}*/
 
 
-	int i,j,k;
 	//drawing a map
 	while(1){
 		for (row = 0; row < SIZEROW; row++) {
@@ -249,17 +252,44 @@ int main() {
 				if (map1[row][column] == LAKE6){
 					drawSprite(32, 32, column * 16, row * 16, 16, 16);
 				}
+				if (map1[row][column] == SPOT){
+					drawSprite(64, 0, column * 16, row * 16, 16, 16);
+				}
+
+
+
+
+
+
+
+
+
+
+
 			}
 
 
 
+
 		}
+		drawSprite(64, 16, columnFields[currentI] * 16, rowFields[currentI] * 16, 16, 16);
+					if((Xil_In32(XPAR_MY_PERIPHERAL_0_BASEADDR) & RIGHT) == 0){
+						if(currentI<6){
+						currentI++;
+						}
+
+					}
+
+
+					if((Xil_In32(XPAR_MY_PERIPHERAL_0_BASEADDR) & LEFT) == 0){
+						if(currentI>0){
+						currentI--;
+						}
+						}
 		drawMap();
-		for(i= 0;i<100000/2;i++){}
-
-
+		//cleanup_platform();
 	}
-	cleanup_platform();
+
 
 	return 0;
 }
