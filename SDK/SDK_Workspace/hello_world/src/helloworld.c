@@ -230,6 +230,22 @@ void moveCreep(){
 			if (map1[row][column] == CREEP4){
 				map1[row][column] = DIRT;
 				mapChanges[row][column] = true;
+				
+				if (map1[row + 1][column] == DIRTPREVIOUS) {
+					map1[row + 1][column] = DIRT;
+				}
+
+				if (map1[row - 1][column] == DIRTPREVIOUS) {
+					map1[row - 1][column] = DIRT;
+				}
+
+				if (map1[row][column + 1] == DIRTPREVIOUS) {
+					map1[row][column + 1] = DIRT;
+				}
+
+				if (map1[row][column - 1] == DIRTPREVIOUS) {
+					map1[row][column - 1] = DIRT;
+				}
 			}
 
 			else if (map1[row][column] == CREEP ||map1[row][column] == CREEP1 ||map1[row][column] == CREEP2 ||map1[row][column] == CREEP3){
@@ -482,7 +498,7 @@ int main() {
 				insertCreep();
 				creepCnt++;
 				creepTimeCnt = 0;
-				rnd = rand() % 20;
+				rnd = (rand() % 20) + 5;
 
 			}
 			else{
