@@ -1,11 +1,12 @@
-14:01:48 **** Auto Build of configuration Debug for project hello_world ****
+16:21:14 **** Auto Build of configuration Debug for project hello_world ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
 ../src/helloworld.c: In function 'main':
-../src/helloworld.c:606:6: warning: unused variable 'rnd' [-Wunused-variable]
-../src/helloworld.c:605:15: warning: unused variable 'creepTimeCnt' [-Wunused-variable]
+../src/helloworld.c:673:15: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:661:6: warning: unused variable 'rnd' [-Wunused-variable]
+../src/helloworld.c:660:15: warning: unused variable 'creepTimeCnt' [-Wunused-variable]
 'Finished building: ../src/helloworld.c'
 ' '
 'Building target: hello_world.elf'
@@ -16,7 +17,7 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -m
 'Invoking: MicroBlaze Print Size'
 mb-size hello_world.elf  |tee "hello_world.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  55880	   2312	   2152	  60344	   ebb8	hello_world.elf
+  55996	   2616	   2172	  60784	   ed70	hello_world.elf
 'Finished building: hello_world.elf.size'
 ' '
 'Invoking: Xilinx ELF Check'
@@ -33,5 +34,5 @@ elfcheck passed.
 'Finished building: hello_world.elf.elfcheck'
 ' '
 
-14:01:49 Build Finished (took 1s.584ms)
+16:21:15 Build Finished (took 1s.529ms)
 

@@ -8,30 +8,31 @@
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item value="true" key="wrap"/>
+		<item value="false" key="wrap"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
-		<item value="true" key="wholeword"/>
-		<item value="0" key="selection"/>
+		<item value="false" key="wholeword"/>
+		<item value="20" key="selection"/>
 		<list key="findhistory">
-			<item value="&apos;0&apos;"/>
-			<item value="C"/>
-			<item value="0"/>
-			<item value="1"/>
-			<item value="map1[row][column]"/>
-			<item value="map"/>
-			<item value="random"/>
-			<item value="TOWER"/>
+			<item value="20"/>
+			<item value="creepCnt"/>
+			<item value="insert"/>
+			<item value="numOfCreepsLVL1"/>
+			<item value="numOfCreeps"/>
+			<item value="currentI"/>
+			<item value="&apos;D&apos;"/>
+			<item value="end"/>
 		</list>
 		<list key="replacehistory">
-			<item value="0"/>
+			<item value="numOfCreepsAlive"/>
 			<item value=""/>
+			<item value="&apos;G&apos;"/>
+			<item value="0"/>
 			<item value="G"/>
 			<item value="row"/>
 			<item value="column"/>
 			<item value="y"/>
-			<item value="x"/>
 		</list>
 	</section>
 </section>
