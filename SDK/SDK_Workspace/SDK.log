@@ -850,3 +850,106 @@ Failed to Scan JTAG Chain
 16:19:46.148 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
 16:21:20.353 INFO  - FPGA Cable Disconnected. All active launches will be terminated. 
 16:21:25.533 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+13:44:15.135 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+13:48:20.770 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+13:50:46.899 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+13:52:44.862 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+Failed to Scan JTAG Chain
+    Unknown Error
+ 
+13:53:09.907 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+13:54:47.231 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+13:56:52.699 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:22:35.842 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+14:28:57.413 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:30:02.374 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:31:26.105 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:34:14.647 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:37:06.902 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:37:23.600 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:38:29.359 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:42:51.923 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:44:19.683 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:44:44.947 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:47:00.616 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:48:26.372 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:50:08.314 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:50:42.216 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:51:03.237 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:52:59.989 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:54:38.764 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:56:18.542 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:57:33.786 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:57:56.732 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+14:59:21.469 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:00:53.844 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:01:12.219 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:14:46.942 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:16:46.994 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:18:11.262 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:19:00.387 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:19:37.418 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:20:19.905 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:21:19.979 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:21:41.275 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:22:45.814 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:23:14.482 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:23:29.551 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:24:04.733 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:25:23.533 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:26:54.718 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+15:27:39.814 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:31:08.677 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:32:22.687 ERROR - Unable to disconnect from existing targets java.lang.NullPointerException
+	at com.xilinx.sdk.targetmanager.internal.json.XMDJSONProcess.issueCommand(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.TM.disconnectTarget(Unknown Source)
+
+15:32:22.711 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+15:32:22.716 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+15:33:31.492 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:34:28.376 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:35:29.035 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:40:25.586 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:43:19.909 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:44:54.837 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:46:00.855 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:47:54.113 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:50:49.319 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:51:34.336 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:57:10.813 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+15:57:40.283 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:00:14.871 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:01:38.265 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:01:52.281 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:02:40.518 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:03:09.850 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:03:31.834 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:04:15.541 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:04:36.336 INFO  - System reset is completed. 
+16:04:52.637 WARN  - Terminating existing sessions on processor microblaze_0 
+16:05:06.776 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:06:10.075 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:08:53.599 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:11:18.327 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:15:52.074 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:19:13.645 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:20:17.546 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:23:34.940 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:24:27.817 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:25:29.198 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:27:56.579 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:29:44.270 WARN  - Terminating existing sessions on processor microblaze_0 
+16:29:48.460 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:30:39.012 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:32:35.545 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:34:04.484 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:34:51.453 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:35:41.776 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:36:12.887 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:39:25.025 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:39:52.807 INFO  - FPGA configured successfully with bitstream "C:/Users/student/Desktop/CVETA/lprs2-TowerDefence/SDK/SDK_Workspace/TowerDefence_hw_platform/download.bit" 
+16:40:13.757 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  

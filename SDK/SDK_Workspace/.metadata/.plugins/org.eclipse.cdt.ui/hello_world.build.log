@@ -1,13 +1,25 @@
-16:21:14 **** Auto Build of configuration Debug for project hello_world ****
+16:39:37 **** Build of configuration Debug for project hello_world ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'moveCreep':
+../src/helloworld.c:318:24: warning: operation on 'i' may be undefined [-Wsequence-point]
 ../src/helloworld.c: In function 'main':
-../src/helloworld.c:673:15: warning: unused variable 'i' [-Wunused-variable]
-../src/helloworld.c:661:6: warning: unused variable 'rnd' [-Wunused-variable]
-../src/helloworld.c:660:15: warning: unused variable 'creepTimeCnt' [-Wunused-variable]
+../src/helloworld.c:805:15: warning: unused variable 'i' [-Wunused-variable]
+../src/helloworld.c:780:6: warning: unused variable 'rnd' [-Wunused-variable]
+../src/helloworld.c:779:15: warning: unused variable 'creepTimeCnt' [-Wunused-variable]
 'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building file: ../src/vga_periph_mem.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../standalone_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.b -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/vga_periph_mem.d" -MT"src/vga_periph_mem.d" -o "src/vga_periph_mem.o" "../src/vga_periph_mem.c"
+'Finished building: ../src/vga_periph_mem.c'
 ' '
 'Building target: hello_world.elf'
 'Invoking: MicroBlaze gcc linker'
@@ -17,7 +29,7 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/microblaze_0/lib -m
 'Invoking: MicroBlaze Print Size'
 mb-size hello_world.elf  |tee "hello_world.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  55996	   2616	   2172	  60784	   ed70	hello_world.elf
+  60100	   3100	   2176	  65376	   ff60	hello_world.elf
 'Finished building: hello_world.elf.size'
 ' '
 'Invoking: Xilinx ELF Check'
@@ -34,5 +46,5 @@ elfcheck passed.
 'Finished building: hello_world.elf.elfcheck'
 ' '
 
-16:21:15 Build Finished (took 1s.529ms)
+16:39:39 Build Finished (took 1s.922ms)
 
