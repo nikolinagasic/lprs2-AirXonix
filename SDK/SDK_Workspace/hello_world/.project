@@ -3,6 +3,7 @@
 	<name>hello_world</name>
 	<comment></comment>
 	<projects>
+		<project>standalone_bsp_1</project>
 		<project>standalone_bsp_0</project>
 		<project>hello_world_bsp</project>
 	</projects>

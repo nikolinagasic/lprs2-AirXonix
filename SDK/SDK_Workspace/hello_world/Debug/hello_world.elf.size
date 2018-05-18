@@ -1,2 +1,2 @@
    text	   data	    bss	    dec	    hex	filename
-  60100	   3100	   2176	  65376	   ff60	hello_world.elf
+  60072	   2800	   2472	  65344	   ff40	hello_world.elf

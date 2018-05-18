@@ -86,7 +86,7 @@ bool endGame = false;
 //Places for towers
 int rowFields[TOWERNUM]={5,5,3,10,10,7,5};
 int columnFields[TOWERNUM]={3,5,7,9,12,14,17};
-
+unsigned char map1[SIZEROW][SIZECOLUMN];
 
 int rowDirtFields[60]={[0 ... 59] = -1};
 int columnDirtFields[60]={[0 ... 59] = -1};
@@ -106,11 +106,19 @@ unsigned int creepspeedcnt = 0;
 //Pokusaj dodavanja novog nivos
 int numOfCreepsAlive = MAXCREEPS;
 int numOfCreepsSpawed= 0;
-
 int lvlCnt = 0;
 
 
 void init(){
+	int row,column;
+	for (row = 0; row < SIZEROW; row++) {
+		for (column = 0; column < SIZECOLUMN; column++) {
+			map1[row][column] = map1Origin[row][column];
+			mapChanges[row][column] = true;
+
+		}
+	}
+
 	VGA_PERIPH_MEM_mWriteMemory(
 				XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x00, 0x0); // direct mode   0
 	VGA_PERIPH_MEM_mWriteMemory(
@@ -315,7 +323,7 @@ void printCreepNumb(){
 //moving creep forward
 void moveCreep(){
 	int i = dirtLen;
-	if(map1[rowDirtFields[--i]][columnDirtFields[i]] != DIRT){
+	if(map1[rowDirtFields[i]][columnDirtFields[i]] != DIRT){
 		if(map1[rowDirtFields[i]][columnDirtFields[i]]==CREEP4){
 			numOfCreepsAlive--;
 			map1[rowDirtFields[i]][columnDirtFields[i]] = DIRT;
@@ -326,16 +334,16 @@ void moveCreep(){
 
 
 			if(currentHP == 2){
-				map1[5][19] = HP2;
-				map1[7][19] = HP2;
-				mapChanges[5][19] = true;
-				mapChanges[7][19] = true;
+				map1[rowDirtFields[dirtLen]-1][columnDirtFields[dirtLen]] = HP2;
+				map1[rowDirtFields[dirtLen]+1][columnDirtFields[dirtLen]] = HP2;
+				mapChanges[rowDirtFields[dirtLen]-1][columnDirtFields[dirtLen]] = true;
+				mapChanges[rowDirtFields[dirtLen]+1][columnDirtFields[dirtLen]] = true;
 			}
 			else if(currentHP == 1){
-				map1[5][19] = HP3;
-				map1[7][19] = HP3;
-				mapChanges[5][19] = true;
-				mapChanges[7][19] = true;
+				/*map1[rowDirtFields[dirtLen]-1][columnDirtFields[dirtLen]] = HP3;
+				map1[rowDirtFields[dirtLen]+1][columnDirtFields[dirtLen]] = HP3;
+				mapChanges[rowDirtFields[dirtLen]-1][columnDirtFields[dirtLen]] = true;
+				mapChanges[rowDirtFields[dirtLen]+1][columnDirtFields[dirtLen]] = true;*/
 			}
 			else if(currentHP == 0){
 				map1[5][19] = HP4;
@@ -348,7 +356,7 @@ void moveCreep(){
 			mapChanges[rowDirtFields[i]][columnDirtFields[i]] = true;
 		}
 	}
-	while(--i >= 0){
+	while((i--) >= 0){
 		if(map1[rowDirtFields[i]][columnDirtFields[i]] != DIRT){
 			if(map1[rowDirtFields[i]][columnDirtFields[i]]==CREEP4){
 						numOfCreepsAlive--;
@@ -364,120 +372,7 @@ void moveCreep(){
 		}
 	}
 
-	/*int row, column;
-	int i = 0;
-	int pom[10];
-	int x[10],y[10];
-	for (row = 0; row < SIZEROW; row++) {
-		for (column = 0; column < SIZECOLUMN; column++) {
-			if (map1[row][column] == CREEP4){
-				map1[row][column] = DIRT;
-				mapChanges[row][column] = true;
 
-				//Racunamo koliko ima krepa
-				numOfCreepsAlive--;
-
-				if(coins < 99){
-					coins++;
-					printCoins();
-				}
-				
-
-				if (map1[row + 1][column] == DIRTPREVIOUS) {
-					map1[row + 1][column] = DIRT;
-				}
-
-				if (map1[row - 1][column] == DIRTPREVIOUS) {
-					map1[row - 1][column] = DIRT;
-				}
-
-				if (map1[row][column + 1] == DIRTPREVIOUS) {
-					map1[row][column + 1] = DIRT;
-				}
-
-				if (map1[row][column - 1] == DIRTPREVIOUS) {
-					map1[row][column - 1] = DIRT;
-				}
-			}
-
-			else if (map1[row][column] == CREEP ||map1[row][column] == CREEP1 ||map1[row][column] == CREEP2 ||map1[row][column] == CREEP3){
-				if(column == 19){
-									map1[row][column] = DIRT;
-									currentHP--;
-									numOfCreepsAlive--;
-									if(currentHP == 2){
-										map1[5][19] = HP2;
-										map1[7][19] = HP2;
-										mapChanges[5][19] = true;
-										mapChanges[7][19] = true;
-									}
-									else if(currentHP == 1){
-										map1[5][19] = HP3;
-										map1[7][19] = HP3;
-										mapChanges[5][19] = true;
-										mapChanges[7][19] = true;
-									}
-									else if(currentHP == 0){
-										map1[5][19] = HP4;
-										map1[7][19] = HP4;
-										mapChanges[5][19] = true;
-										mapChanges[7][19] = true;
-										endGame = true;
-									}
-								}
-				else{
-					pom[i] = map1[row][column];
-					map1[row][column] = DIRTPREVIOUS;
-					if(map1[row+1][column]==DIRT){
-						map1[row+1][column]= MOVEDCREEP;
-						mapChanges[row+1][column]= true;
-						x[i] = row+1;
-						y[i++] = column;
-					}
-					if(map1[row-1][column]==DIRT){
-						map1[row-1][column]= MOVEDCREEP;
-						mapChanges[row-1][column]= true;
-						x[i] = row-1;
-						y[i++] = column;
-					}
-					if(map1[row][column+1]==DIRT){
-						map1[row][column+1]= MOVEDCREEP;
-						mapChanges[row][column+1]= true;
-						x[i] = row;
-						y[i++] = column+1;
-					}
-					if(map1[row][column-1]==DIRT){
-						map1[row][column-1]= MOVEDCREEP;
-						mapChanges[row][column-1]= true;
-						x[i] = row;
-						y[i++] = column-1;
-					}
-
-				}
-				if(map1[row+1][column]==DIRTPREVIOUS){
-					map1[row+1][column]= DIRT;
-
-				}
-				if(map1[row-1][column]==DIRTPREVIOUS){
-					map1[row-1][column]= DIRT;
-				}
-				if(map1[row][column+1]==DIRTPREVIOUS){
-					map1[row][column+1]= DIRT;
-				}
-				if(map1[row][column-1]==DIRTPREVIOUS){
-					map1[row][column-1]= DIRT;
-				}
-				mapChanges[row][column] = true;
-
-
-			}
-		}
-	}
-	int j;
-	for (j=0;j<i;j++){
-		map1[x[j]][y[j]] = pom[j];
-	}
-	drawMap();*/
 }
 
 
@@ -485,7 +380,7 @@ void getDirtPos(int startRow,int startColumn){
 	int prevRow,prevColumn;
 	rowDirtFields[dirtLen]=startRow;
 	columnDirtFields[dirtLen++]=startColumn;
-	xil_printf("%d ->(%d : %d)\n",dirtLen,rowDirtFields[dirtLen-1],columnDirtFields[dirtLen-1]);
+
 	if(startRow == 0){
 		if(map1[startRow+1][startColumn] == DIRT){
 			rowDirtFields[dirtLen]=startRow+1;
@@ -500,7 +395,7 @@ void getDirtPos(int startRow,int startColumn){
 			startColumn++;
 		}
 	}
-	xil_printf("%d ->(%d : %d)\n",dirtLen,rowDirtFields[dirtLen],columnDirtFields[dirtLen]);
+
 
 	while(rowDirtFields[dirtLen] != 0 && rowDirtFields[dirtLen] != 14 && columnDirtFields[dirtLen] != 19){
 		prevRow = rowDirtFields[dirtLen-1];
@@ -533,10 +428,7 @@ void getDirtPos(int startRow,int startColumn){
 				columnDirtFields[dirtLen] = columnDirtFields[dirtLen-1]-1;
 			}
 		}
-		xil_printf("%d ->(%d : %d)-(%d:%d)\n",dirtLen,rowDirtFields[dirtLen],columnDirtFields[dirtLen],prevRow,prevColumn);
-		if(dirtLen >34){
-			break;
-		}
+
 	}
 
 
@@ -727,7 +619,7 @@ void drawEndGame(){
 		if((Xil_In32(XPAR_MY_PERIPHERAL_0_BASEADDR) & CENTER) == 0){
 			for (row = 0; row < SIZEROW; row++) {
 				for (column = 0; column < SIZECOLUMN; column++) {
-					map1[row][column] = mapOrigin[row][column];
+					map1[row][column] = map1Origin[row][column];
 					mapChanges[row][column] = true;
 
 				}
@@ -776,8 +668,7 @@ int main() {
 
 	cleanup_platform();
 
-	unsigned int creepTimeCnt = 0;
-	int rnd,cnt=0,cnt1=0;
+	int cnt=0,cnt1=0;
 	init_platform();
 	srand(30);
 	init();
@@ -795,14 +686,14 @@ int main() {
 	drawSprite(8,72,16,8,8,8);
 
 	getDirtPos(11,0);
-
+	xil_printf("(%d : %d)",rowDirtFields[dirtLen+1],columnDirtFields[dirtLen+1]);
 	/*xil_printf("\n(%d : %d)",rowDirtFields[0],columnDirtFields[0]);
 	xil_printf("(%d : %d)",rowDirtFields[1],columnDirtFields[1]);
 	xil_printf("(%d : %d)",rowDirtFields[2],columnDirtFields[2]);
 	xil_printf("(%d : %d)",rowDirtFields[3],columnDirtFields[3]);
 	xil_printf("(%d : %d)",rowDirtFields[4],columnDirtFields[4]);*/
 	//xil_printf("AAAA");
-	unsigned int i = 0;
+
 
 	while(1){
 
