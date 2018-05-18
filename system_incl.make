@@ -147,16 +147,19 @@ WRAPPER_NGC_FILES = implementation/system_vga_periph_mem_0_wrapper.ngc \
 implementation/system_proc_sys_reset_0_wrapper.ngc \
 implementation/system_my_peripheral_0_wrapper.ngc \
 implementation/system_microblaze_0_ilmb_wrapper.ngc \
-implementation/system_microblaze_0_i_bram_ctrl_wrapper.ngc \
 implementation/system_microblaze_0_dlmb_wrapper.ngc \
-implementation/system_microblaze_0_d_bram_ctrl_wrapper.ngc \
-implementation/system_microblaze_0_bram_block_wrapper.ngc \
+implementation/system_microblaze_0_d_bram_ctrl_0_wrapper.ngc \
+implementation/system_microblaze_0_i_bram_ctrl_0_wrapper.ngc \
+implementation/system_microblaze_0_bram_block_0_wrapper.ngc \
 implementation/system_microblaze_0_wrapper.ngc \
 implementation/system_debug_module_wrapper.ngc \
 implementation/system_clock_generator_0_wrapper.ngc \
 implementation/system_axi4lite_0_wrapper.ngc \
 implementation/system_rs232_wrapper.ngc \
-implementation/system_axi_intc_0_wrapper.ngc
+implementation/system_axi_intc_0_wrapper.ngc \
+implementation/system_microblaze_0_d_bram_ctrl_1_wrapper.ngc \
+implementation/system_microblaze_0_bram_block_1_wrapper.ngc \
+implementation/system_microblaze_0_i_bram_ctrl_1_wrapper.ngc
 
 POSTSYN_NETLIST = implementation/$(SYSTEM).ngc
 

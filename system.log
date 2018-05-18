@@ -3109,3 +3109,65 @@ rm -f simgen.log
 rm -f __xps/ise/_xmsgs/simgen.xmsgs
 rm -f _impact.cmd
 Done!
+The project's MHS file has changed on disk.
+The project's MHS file has changed on disk.
+The project's MHS file has changed on disk.
+Writing filter settings....
+Done writing filter settings to:
+	D:\ra128\lprs2-TowerDefence\etc\system.filters
+Done writing Tab View settings to:
+	D:\ra128\lprs2-TowerDefence\etc\system.gui
+microblaze_0_i_bram_ctrl_1 has been deleted from the project
+Assigned Driver bram 3.02.a for instance bram_cntlr_0
+bram_cntlr_0 has been added to the project
+ERROR:EDK - bram_cntlr_0 (lmb_bram_if_cntlr) - Invalid lmb_bram_if_cntlr parameter:
+You must set the value for C_BASEADDR and C_HIGHADDR 
+WARNING:EDK:2137 - Peripheral bram_cntlr_0 is not accessible from any processor in the system. Check Bus Interface connections and address parameters. 
+ERROR:EDK - microblaze_0_i_bram_ctrl_1 (lmb_bram_if_cntlr) - Invalid lmb_bram_if_cntlr parameter:
+You must set the value for C_BASEADDR and C_HIGHADDR 
+WARNING:EDK:2137 - Peripheral microblaze_0_i_bram_ctrl_1 is not accessible from any processor in the system. Check Bus Interface connections and address parameters. 
+ERROR:EDK - microblaze_0_i_bram_ctrl_1 (lmb_bram_if_cntlr) - Invalid lmb_bram_if_cntlr parameter:
+You must set the value for C_BASEADDR and C_HIGHADDR 
+WARNING:EDK:2137 - Peripheral microblaze_0_i_bram_ctrl_1 is not accessible from any processor in the system. Check Bus Interface connections and address parameters. 
+ERROR:EDK - microblaze_0_i_bram_ctrl_1 (lmb_bram_if_cntlr) - Invalid lmb_bram_if_cntlr parameter:
+You must set the value for C_BASEADDR and C_HIGHADDR 
+
+********************************************************************************
+At Local date and time: Fri May 18 12:21:59 2018
+ make -f system.make exporttosdk started...
+IF NOT EXIST "SDK\SDK_Export\hw" @mkdir "SDK\SDK_Export\hw"
+psf2Edward -inp system.xmp -exit_on_error -dont_add_loginfo -make_inst_lower -edwver 1.2 -xml SDK\SDK_Export\hw/system.xml 
+Release 14.6 - psf2Edward EDK_P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Checking platform configuration ...
+IPNAME: lmb_v10, INSTANCE: microblaze_0_ilmb - 1 master(s) : 2 slave(s) 
+IPNAME: lmb_v10, INSTANCE: microblaze_0_dlmb - 1 master(s) : 2 slave(s) 
+IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 5 slave(s) 
+
+Checking port drivers...
+
+Performing Clock DRCs...
+
+Performing Reset DRCs...
+
+Overriding system level properties...
+
+INFO: Setting C_RANGE_CHECK = ON for axi_interconnect axi4lite_0.
+
+Running system level update procedures...
+
+Running UPDATE Tcl procedures for OPTION SYSLEVEL_UPDATE_PROC...
+
+Running system level DRCs...
+
+Performing System level DRCs on properties...
+
+Running DRC Tcl procedures for OPTION SYSLEVEL_DRC_PROC...
+INTC INFO:: Processor_clk not connected.. IRQ to Microblaze is generated on AXI
+clock.
+Conversion to XML complete.
+xdsgen -inp system.xmp -report SDK\SDK_Export\hw/system.html  -make_docs_local
+Release 14.6 - xdsgen EDK_P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Generated Block Diagram.

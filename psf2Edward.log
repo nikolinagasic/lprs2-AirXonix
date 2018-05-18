@@ -1,7 +1,7 @@
 
 Checking platform configuration ...
-IPNAME: lmb_v10, INSTANCE: microblaze_0_ilmb - 1 master(s) : 1 slave(s) 
-IPNAME: lmb_v10, INSTANCE: microblaze_0_dlmb - 1 master(s) : 1 slave(s) 
+IPNAME: lmb_v10, INSTANCE: microblaze_0_ilmb - 1 master(s) : 2 slave(s) 
+IPNAME: lmb_v10, INSTANCE: microblaze_0_dlmb - 1 master(s) : 2 slave(s) 
 IPNAME: axi_interconnect, INSTANCE: axi4lite_0 - 1 master(s) : 5 slave(s) 
 WARNING:EDK:3977 - AXI4 protocol type BUSIF: S_AXI of IPINSTANCE:
    vga_periph_mem_0  connected with AXI4LITE type BUSIF: M_AXI_DP of IPINSTANCE:
@@ -22,12 +22,12 @@ Performing Clock DRCs...
 Performing Reset DRCs...
 
 Overriding system level properties...
-INFO:EDK:4130 - IPNAME: lmb_bram_if_cntlr, INSTANCE:microblaze_0_i_bram_ctrl -
-   tcl is overriding PARAMETER C_MASK value to 0x40000000 -
+INFO:EDK:4130 - IPNAME: lmb_bram_if_cntlr, INSTANCE:microblaze_0_d_bram_ctrl_0 -
+   tcl is overriding PARAMETER C_MASK value to 0x40010000 -
    C:\Xilinx\14.6\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_bram_if_cntlr_v3
    _10_c\data\lmb_bram_if_cntlr_v2_1_0.mpd line 92 
-INFO:EDK:4130 - IPNAME: lmb_bram_if_cntlr, INSTANCE:microblaze_0_d_bram_ctrl -
-   tcl is overriding PARAMETER C_MASK value to 0x40000000 -
+INFO:EDK:4130 - IPNAME: lmb_bram_if_cntlr, INSTANCE:microblaze_0_i_bram_ctrl_0 -
+   tcl is overriding PARAMETER C_MASK value to 0x40010000 -
    C:\Xilinx\14.6\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_bram_if_cntlr_v3
    _10_c\data\lmb_bram_if_cntlr_v2_1_0.mpd line 92 
 INFO:EDK:4130 - IPNAME: microblaze, INSTANCE:microblaze_0 - tcl is overriding
@@ -72,6 +72,14 @@ INFO:EDK:4130 - IPNAME: axi_intc, INSTANCE:axi_intc_0 - tcl is overriding
    PARAMETER C_KIND_OF_LVL value to 0b11111111111111111111111111111111 -
    C:\Xilinx\14.6\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_intc_v1_04_a\dat
    a\axi_intc_v2_1_0.mpd line 89 
+INFO:EDK:4130 - IPNAME: lmb_bram_if_cntlr, INSTANCE:microblaze_0_d_bram_ctrl_1 -
+   tcl is overriding PARAMETER C_MASK value to 0x04010000 -
+   C:\Xilinx\14.6\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_bram_if_cntlr_v3
+   _10_c\data\lmb_bram_if_cntlr_v2_1_0.mpd line 92 
+INFO:EDK:4130 - IPNAME: lmb_bram_if_cntlr, INSTANCE:microblaze_0_i_bram_ctrl_1 -
+   tcl is overriding PARAMETER C_MASK value to 0x04010000 -
+   C:\Xilinx\14.6\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\lmb_bram_if_cntlr_v3
+   _10_c\data\lmb_bram_if_cntlr_v2_1_0.mpd line 92 
 
 Running system level update procedures...
 

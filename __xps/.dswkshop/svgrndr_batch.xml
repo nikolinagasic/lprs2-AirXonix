@@ -9,13 +9,13 @@
 
   <RENDERIMG RASNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_ilmb.jpg" SVGNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_ilmb.svg" TMPSVGFN="D:\ra128\lprs2-TowerDefence\__xps\.dswkshop\microblaze_0_ilmb.svg"/>
 
-  <RENDERIMG RASNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_i_bram_ctrl.jpg" SVGNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_i_bram_ctrl.svg" TMPSVGFN="D:\ra128\lprs2-TowerDefence\__xps\.dswkshop\microblaze_0_i_bram_ctrl.svg"/>
-
   <RENDERIMG RASNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_dlmb.jpg" SVGNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_dlmb.svg" TMPSVGFN="D:\ra128\lprs2-TowerDefence\__xps\.dswkshop\microblaze_0_dlmb.svg"/>
 
-  <RENDERIMG RASNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_d_bram_ctrl.jpg" SVGNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_d_bram_ctrl.svg" TMPSVGFN="D:\ra128\lprs2-TowerDefence\__xps\.dswkshop\microblaze_0_d_bram_ctrl.svg"/>
+  <RENDERIMG RASNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_d_bram_ctrl_0.jpg" SVGNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_d_bram_ctrl_0.svg" TMPSVGFN="D:\ra128\lprs2-TowerDefence\__xps\.dswkshop\microblaze_0_d_bram_ctrl_0.svg"/>
 
-  <RENDERIMG RASNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_bram_block.jpg" SVGNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_bram_block.svg" TMPSVGFN="D:\ra128\lprs2-TowerDefence\__xps\.dswkshop\microblaze_0_bram_block.svg"/>
+  <RENDERIMG RASNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_i_bram_ctrl_0.jpg" SVGNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_i_bram_ctrl_0.svg" TMPSVGFN="D:\ra128\lprs2-TowerDefence\__xps\.dswkshop\microblaze_0_i_bram_ctrl_0.svg"/>
+
+  <RENDERIMG RASNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_bram_block_0.jpg" SVGNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_bram_block_0.svg" TMPSVGFN="D:\ra128\lprs2-TowerDefence\__xps\.dswkshop\microblaze_0_bram_block_0.svg"/>
 
   <RENDERIMG RASNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0.jpg" SVGNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0.svg" TMPSVGFN="D:\ra128\lprs2-TowerDefence\__xps\.dswkshop\microblaze_0.svg"/>
 
@@ -28,6 +28,12 @@
   <RENDERIMG RASNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\RS232.jpg" SVGNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\RS232.svg" TMPSVGFN="D:\ra128\lprs2-TowerDefence\__xps\.dswkshop\RS232.svg"/>
 
   <RENDERIMG RASNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\axi_intc_0.jpg" SVGNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\axi_intc_0.svg" TMPSVGFN="D:\ra128\lprs2-TowerDefence\__xps\.dswkshop\axi_intc_0.svg"/>
+
+  <RENDERIMG RASNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_d_bram_ctrl_1.jpg" SVGNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_d_bram_ctrl_1.svg" TMPSVGFN="D:\ra128\lprs2-TowerDefence\__xps\.dswkshop\microblaze_0_d_bram_ctrl_1.svg"/>
+
+  <RENDERIMG RASNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_bram_block_1.jpg" SVGNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_bram_block_1.svg" TMPSVGFN="D:\ra128\lprs2-TowerDefence\__xps\.dswkshop\microblaze_0_bram_block_1.svg"/>
+
+  <RENDERIMG RASNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_i_bram_ctrl_1.jpg" SVGNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\microblaze_0_i_bram_ctrl_1.svg" TMPSVGFN="D:\ra128\lprs2-TowerDefence\__xps\.dswkshop\microblaze_0_i_bram_ctrl_1.svg"/>
 
   <RENDERIMG RASNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\system_blkd.jpg" SVGNAME="D:\ra128\lprs2-TowerDefence\SDK\SDK_Export\hw\imgs\system_blkd.svg" TMPSVGFN="D:\ra128\lprs2-TowerDefence\__xps\.dswkshop\system_blkd.svg"/>
 
