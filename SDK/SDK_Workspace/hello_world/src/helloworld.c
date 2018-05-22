@@ -95,29 +95,16 @@ int columnTowerFields[10]={[0 ... 9] = -1};
 int numOfTowers = 0;
 
 int creepsSpawned = 0;
-int creepsRem = 30;
+int creepsRem = MAXCREEPS;
 int currentI = 0;
 int btnCnt = 0;
 int currentHP = 3;
 int coins = 31;
-unsigned int creepspeedcnt = 0;
-
-//Pokusaj dodavanja novog nivos
-int numOfCreepsAlive = MAXCREEPS;
-int lvlCnt = 0;
 
 char lastKey = 'n';
 
 
 void init(){
-	int row,column;
-	for (row = 0; row < SIZEROW; row++) {
-		for (column = 0; column < SIZECOLUMN; column++) {
-			map1[row][column] = map1Origin[row][column];
-			mapChanges[row][column] = true;
-
-		}
-	}
 
 	VGA_PERIPH_MEM_mWriteMemory(
 				XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x00, 0x0); // direct mode   0
@@ -194,7 +181,6 @@ void drawMap(){
 				}
 				else if (map1[row][column] == CREEP4){
 					drawSprite(48, 64, column * 16, row * 16, 16, 16);
-
 				}
 				else if (map1[row][column] == LAKE1){
 					drawSprite(0, 16, column * 16, row * 16, 16, 16);
@@ -325,7 +311,6 @@ void moveCreep(){
 	int i = dirtLen;
 	if(map1[rowDirtFields[i]][columnDirtFields[i]] != DIRT){
 		if(map1[rowDirtFields[i]][columnDirtFields[i]]==CREEP4){
-			numOfCreepsAlive--;
 			creepsRem--;
 			map1[rowDirtFields[i]][columnDirtFields[i]] = DIRT;
 			mapChanges[rowDirtFields[i]][columnDirtFields[i]] = true;
@@ -360,7 +345,6 @@ void moveCreep(){
 	while((i--) >= 0){
 		if(map1[rowDirtFields[i]][columnDirtFields[i]] != DIRT){
 			if(map1[rowDirtFields[i]][columnDirtFields[i]]==CREEP4){
-				numOfCreepsAlive--;
 				creepsRem--;
 				coins+=3;
 				printCoins();
@@ -376,7 +360,7 @@ void moveCreep(){
 		}
 	}
 
-
+	drawMap();
 }
 
 void getDirtPos(int startRow,int startColumn){
@@ -462,28 +446,22 @@ void getTowerPos(){
 
 }
 
-char readPressedKeys() {
+char getPressedKey() {
+	char pressedKey;
 
 	if ((Xil_In32(XPAR_MY_PERIPHERAL_0_BASEADDR) & RIGHT) == 0) {
-		return 'r';
+		pressedKey = 'r';
 	}
 
 	else if ((Xil_In32(XPAR_MY_PERIPHERAL_0_BASEADDR) & LEFT) == 0) {
-		return 'l';
+		pressedKey = 'l';
 	}
 	else if ((Xil_In32(XPAR_MY_PERIPHERAL_0_BASEADDR) & UP) == 0) {
-		return 'u';
+		pressedKey = 'u';
 	}
 	else if ((Xil_In32(XPAR_MY_PERIPHERAL_0_BASEADDR) & CENTER) == 0) {
-		return 'R';
+		pressedKey = 'R';
 	}
-	else {
-		return 'n';
-	}
-}
-
-char getPressedKey() {
-	char pressedKey = readPressedKeys();
 
 	if (pressedKey != lastKey) {
 		lastKey = pressedKey;
@@ -498,90 +476,93 @@ void placeTower(){
 
 	char pressedKey = getPressedKey();
 
-	if (pressedKey == 'r') {
-
-		if(map1[rowTowerFields[currentI]][columnTowerFields[currentI]] == SELECTEDSPOT){
-			map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = SPOT;
-		}
-		else{
-			if(map1[rowTowerFields[currentI]][columnTowerFields[currentI]] == SELECTEDTOWER){
-				map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = TOWER;
+	switch(pressedKey){
+		case 'r':
+			if(map1[rowTowerFields[currentI]][columnTowerFields[currentI]] == SELECTEDSPOT){
+				map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = SPOT;
 			}
 			else{
-				map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = TOWER2;
+				if(map1[rowTowerFields[currentI]][columnTowerFields[currentI]] == SELECTEDTOWER){
+					map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = TOWER;
+				}
+				else{
+					map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = TOWER2;
+				}
 			}
-		}
 
-		mapChanges[rowTowerFields[currentI]][columnTowerFields[currentI]] = true;
-		currentI++;
-		if (currentI == numOfTowers) {
-			currentI = 0;
-		}
-		if(map1[rowTowerFields[currentI]][columnTowerFields[currentI]] == SPOT){
-			map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = SELECTEDSPOT;
-		}
-		else{
-			if(map1[rowTowerFields[currentI]][columnTowerFields[currentI]] == TOWER){
-				map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = SELECTEDTOWER;
+			mapChanges[rowTowerFields[currentI]][columnTowerFields[currentI]] = true;
+			currentI++;
+			if (currentI == numOfTowers) {
+				currentI = 0;
 			}
-			else{
-				map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = SELECTEDTOWER2;
-			}
-		}
-	}
-
-	else if (pressedKey == 'l') {
-
-		if(map1[rowTowerFields[currentI]][columnTowerFields[currentI]] != TOWER &&
-				map1[rowTowerFields[currentI]][columnTowerFields[currentI]] != SELECTEDTOWER &&
-			map1[rowTowerFields[currentI]][columnTowerFields[currentI]] != TOWER2 &&
-								map1[rowTowerFields[currentI]][columnTowerFields[currentI]] != SELECTEDTOWER2){
-			map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = SPOT;
-		}
-		else{
-			if(map1[rowTowerFields[currentI]][columnTowerFields[currentI]] == SELECTEDTOWER){
-				map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = TOWER;
+			if(map1[rowTowerFields[currentI]][columnTowerFields[currentI]] == SPOT){
+				map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = SELECTEDSPOT;
 			}
 			else{
-				map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = TOWER2;
+				if(map1[rowTowerFields[currentI]][columnTowerFields[currentI]] == TOWER){
+					map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = SELECTEDTOWER;
+				}
+				else{
+					map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = SELECTEDTOWER2;
+				}
 			}
-		}
-		mapChanges[rowTowerFields[currentI]][columnTowerFields[currentI]] = true;
+			mapChanges[rowTowerFields[currentI]][columnTowerFields[currentI]] = true;
+			break;
 
-		if (currentI < 0) {
-			currentI = numOfTowers-1;
-		}
+		case 'l':
 
-		if(map1[rowTowerFields[currentI]][columnTowerFields[currentI]] != TOWER &&
-				map1[rowTowerFields[currentI]][columnTowerFields[currentI]] != TOWER2){
-			map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = SELECTEDSPOT;
-		}
-		else{
-			if(map1[rowTowerFields[currentI]][columnTowerFields[currentI]] == TOWER){
-				map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = SELECTEDTOWER;
+			if(map1[rowTowerFields[currentI]][columnTowerFields[currentI]] != TOWER &&
+					map1[rowTowerFields[currentI]][columnTowerFields[currentI]] != SELECTEDTOWER &&
+				map1[rowTowerFields[currentI]][columnTowerFields[currentI]] != TOWER2 &&
+									map1[rowTowerFields[currentI]][columnTowerFields[currentI]] != SELECTEDTOWER2){
+				map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = SPOT;
 			}
 			else{
-				map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = SELECTEDTOWER2;
+				if(map1[rowTowerFields[currentI]][columnTowerFields[currentI]] == SELECTEDTOWER){
+					map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = TOWER;
+				}
+				else{
+					map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = TOWER2;
+				}
 			}
-		}
-	}
+			mapChanges[rowTowerFields[currentI]][columnTowerFields[currentI]] = true;
 
-	else if (pressedKey == 'u') {
-		btnCnt = (btnCnt + 1)%2;
-		if(btnCnt==0){
-			map1[0][19] = SELECTEDTOWER;
-			map1[1][19] = TOWER2;
-		}
-		else{
-			map1[0][19] = TOWER;
-			map1[1][19] = SELECTEDTOWER2;
-		}
-		mapChanges[0][19] = true;
-		mapChanges[1][19] = true;
-	}
+			currentI--;
+			if (currentI < 0) {
+				currentI = numOfTowers-1;
+			}
+
+			if(map1[rowTowerFields[currentI]][columnTowerFields[currentI]] != TOWER &&
+					map1[rowTowerFields[currentI]][columnTowerFields[currentI]] != TOWER2){
+				map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = SELECTEDSPOT;
+			}
+			else{
+				if(map1[rowTowerFields[currentI]][columnTowerFields[currentI]] == TOWER){
+					map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = SELECTEDTOWER;
+				}
+				else{
+					map1[rowTowerFields[currentI]][columnTowerFields[currentI]] = SELECTEDTOWER2;
+				}
+			}
+			mapChanges[rowTowerFields[currentI]][columnTowerFields[currentI]] = true;
+			break;
+
+		case 'u':
+			btnCnt = (btnCnt + 1)%2;
+			if(btnCnt==0){
+				map1[0][19] = SELECTEDTOWER;
+				map1[1][19] = TOWER2;
+			}
+			else{
+				map1[0][19] = TOWER;
+				map1[1][19] = SELECTEDTOWER2;
+			}
+			mapChanges[0][19] = true;
+			mapChanges[1][19] = true;
+			break;
 
 
-	else if (pressedKey == 'R') {
+		case 'R':
 
 			if(map1[rowTowerFields[currentI]][columnTowerFields[currentI]] == SELECTEDSPOT){
 				if(btnCnt==0){
@@ -606,17 +587,20 @@ void placeTower(){
 					printCoins();
 				}
 			}
+			mapChanges[rowTowerFields[currentI]][columnTowerFields[currentI]] = true;
+			break;
 
-		}
 
-	mapChanges[rowTowerFields[currentI]][columnTowerFields[currentI]] = true;
+	}
+	//mapChanges[rowTowerFields[currentI]][columnTowerFields[currentI]] = true;
 	drawMap();
+
 }
 
 void insertCreep(){
 	//////////////////////////////////////////////////////////////////////////////////////
-	static int numOfCreepsSpawed = 0; /// NEMOJ DIRATI OVO NIKADA NI SLUCAJNO
-	numOfCreepsSpawed++;			  /// A NI OVO!!!!!!!!!!!!!!!!!! NIKADA :) OZBILJNO TO MISLIM.... KENJICU NE SERI!
+	static int DONTTOUCH = 0; /// NEMOJ DIRATI OVO NIKADA NI SLUCAJNO
+	DONTTOUCH++;			  /// A NI OVO!!!!!!!!!!!!!!!!!! NIKADA :) OZBILJNO TO MISLIM.... KENJICU NE SERI!
 	//////////////////////////////////////////////////////////////////////////////////////
 
 	map1[rowDirtFields[0]][columnDirtFields[0]] = CREEP;
@@ -651,27 +635,65 @@ void turretOneFire(){
 
 void turretTwoFire(){
 	int row,column;
-		for (row = 0; row < SIZEROW-1; row++) {
-			for (column = 0; column < SIZECOLUMN-1; column++) {
-				if((map1[row][column] == TOWER2 )  || map1[row][column] == SELECTEDTOWER2){
-					int i,j;
-					for(i=-1;i<2;i++){
-						for(j=-1;j<2;j++){
-							if(map1[row+i][column+j] == CREEP || map1[row+i][column+j] == CREEP1 || map1[row+i][column+j] == CREEP2 || map1[row+i][column+j] == CREEP3){
-								drawSprite(80,64,column*16,row*16,16,16);
-								mapChanges[row][column] = true;
-								map1[row+i][column+j]++;
-								mapChanges[row+i][column+j]=true;
-							}
-
+	for (row = 0; row < SIZEROW-1; row++) {
+		for (column = 0; column < SIZECOLUMN-1; column++) {
+			if((map1[row][column] == TOWER2 )  || map1[row][column] == SELECTEDTOWER2){
+				int i,j;
+				for(i=-1;i<2;i++){
+					for(j=-1;j<2;j++){
+						if(map1[row+i][column+j] == CREEP || map1[row+i][column+j] == CREEP1 || map1[row+i][column+j] == CREEP2 || map1[row+i][column+j] == CREEP3){
+							drawSprite(80,64,column*16,row*16,16,16);
+							mapChanges[row][column] = true;
+							map1[row+i][column+j]++;
+							mapChanges[row+i][column+j]=true;
 						}
+
 					}
 				}
 			}
 		}
-		for(row = 0 ; row < 500000;row++);
+	}
+	for(row = 0 ; row < 500000;row++);
 
+	drawMap();
+}
+
+void drawWinLvl(){
+	int row,column;
+	while(1){
+
+		if((Xil_In32(XPAR_MY_PERIPHERAL_0_BASEADDR) & CENTER) == 0){
+			break;
+		}
+
+		for (row = 0; row < SIZEROW; row++) {
+			for (column = 0; column < SIZECOLUMN; column++) {
+				map1[row][column] = nextLvl[row][column];
+				mapChanges[row][column] = true;
+
+			}
+		}
 		drawMap();
+	}
+}
+
+void drawWon(){
+	int row,column;
+	while(1){
+
+		if((Xil_In32(XPAR_MY_PERIPHERAL_0_BASEADDR) & CENTER) == 0){
+			break;
+		}
+
+		for (row = 0; row < SIZEROW; row++) {
+			for (column = 0; column < SIZECOLUMN; column++) {
+				map1[row][column] = youWon[row][column];
+				mapChanges[row][column] = true;
+
+			}
+		}
+		drawMap();
+	}
 }
 
 void drawEndGame(){
@@ -679,26 +701,7 @@ void drawEndGame(){
 	while(1){
 
 		if((Xil_In32(XPAR_MY_PERIPHERAL_0_BASEADDR) & CENTER) == 0){
-			for (row = 0; row < SIZEROW; row++) {
-				for (column = 0; column < SIZECOLUMN; column++) {
-					map1[row][column] = map1Origin[row][column];
-					mapChanges[row][column] = true;
-
-				}
-			}
-
-			currentHP = 3;
-			coins = 21;
-
-			numOfCreepsAlive = MAXCREEPS;
-			currentI = 0;
-			endGame = false;
-			drawMap(); // init map
-			printCoins();
-			drawSprite(8,64,16,0,8,8);
-
 				break;
-
 			}
 
 		for (row = 0; row < SIZEROW; row++) {
@@ -720,78 +723,192 @@ void drawEndGame(){
 	}
 }
 
+void lvl1(){
+	int turrentOneFire=0, turrentTwoFire=0;
+	unsigned int placeTowerSpeed=0;
+	unsigned int creepSpeed = 0;
+	int creepTime = 0;
+
+	int row,column;
+	for (row = 0; row < SIZEROW; row++) {
+		for (column = 0; column < SIZECOLUMN; column++) {
+			map1[row][column] = map1Origin[row][column];
+			mapChanges[row][column] = true;
+		}
+	}
+
+	currentHP = 3;
+	coins = 21;
+	creepsSpawned = 0;
+	currentI = 0;
+	endGame = false;
+	creepsRem = MAXCREEPS;
+	printCoins();
+	drawSprite(8,64,16,0,8,8);
+	dirtLen=0;
+	numOfTowers = 0;
+
+	getDirtPos(0,2);
+	getTowerPos();
+
+	drawMap(); // init map
+
+	printCoins();
+	printCreepNumb();
+	drawSprite(8,64,16,0,8,8);
+	drawSprite(8,72,16,8,8,8);
+
+	while(1){
+
+			if(endGame){
+				drawEndGame();
+				lvl1();
+			}
+
+			if (creepsRem == 0){
+				drawWinLvl();
+				break;
+			}
+			if (placeTowerSpeed == 10000){
+				placeTower();
+				placeTowerSpeed = 0;
+			}
+
+			//provera da li je kraj lvl-a
+			if (creepSpeed == 1000000){
+				moveCreep();
+				printCreepNumb();
+
+				if(creepTime == 5){
+					if(creepsSpawned < MAXCREEPS){
+						insertCreep();
+					}
+
+					creepTime = 0;
+
+				}
+
+				if(turrentOneFire == 6 ){
+					turretOneFire();
+					turrentOneFire = 0;
+				}
+
+				if(turrentTwoFire == 4 ){
+					turretTwoFire();
+					turrentTwoFire = 0;
+				}
+
+				turrentOneFire++;
+				turrentTwoFire++;
+				creepTime++;
+				creepSpeed=0;
+			}
+
+			creepSpeed++;
+			placeTowerSpeed++;
+
+		}
+}
+
+void lvl2(){
+	int turrentOneFire=0, turrentTwoFire=0;
+	unsigned int placeTowerSpeed=0;
+	unsigned int creepSpeed = 0;
+	int creepTime = 0;
+
+	int row,column;
+	for (row = 0; row < SIZEROW; row++) {
+		for (column = 0; column < SIZECOLUMN; column++) {
+			map1[row][column] = map2Origin[row][column];
+			mapChanges[row][column] = true;
+		}
+	}
+
+	currentHP = 3;
+	coins = 21;
+	creepsSpawned = 0;
+	currentI = 0;
+	endGame = false;
+	creepsRem = MAXCREEPS;
+	printCoins();
+	drawSprite(8,64,16,0,8,8);
+	dirtLen=0;
+	numOfTowers = 0;
+
+	getDirtPos(11,0);
+	getTowerPos();
+
+	drawMap(); // init map
+
+	printCoins();
+	printCreepNumb();
+	drawSprite(8,64,16,0,8,8);
+	drawSprite(8,72,16,8,8,8);
+
+
+	while(1){
+
+			if(endGame){
+				drawEndGame();
+				lvl1();
+			}
+
+			if (creepsRem == 0){
+				drawWon();
+				break;
+			}
+			if (placeTowerSpeed == 10000){
+				placeTower();
+				placeTowerSpeed = 0;
+			}
+
+			//provera da li je kraj lvl-a
+			if (creepSpeed == 1000000){
+				moveCreep();
+				printCreepNumb();
+
+				if(creepTime == 5){
+					if(creepsSpawned < MAXCREEPS){
+						insertCreep();
+					}
+
+					creepTime = 0;
+
+				}
+
+				if(turrentOneFire == 6 ){
+					turretOneFire();
+					turrentOneFire = 0;
+				}
+
+				if(turrentTwoFire == 4 ){
+					turretTwoFire();
+					turrentTwoFire = 0;
+				}
+
+				turrentOneFire++;
+				turrentTwoFire++;
+				creepTime++;
+				creepSpeed=0;
+			}
+
+			creepSpeed++;
+			placeTowerSpeed++;
+
+		}
+}
+
 
 
 int main() {
 
 	cleanup_platform();
 
-	int cnt=0,cnt1=0;
 	init_platform();
-	srand(30);
 	init();
 
-	int creepCnt = 0;
-
-	drawMap(); // init map
-
-	printCoins();
-
-	printCreepNumb();
-
-	drawSprite(8,64,16,0,8,8);
-
-	drawSprite(8,72,16,8,8,8);
-
-	getDirtPos(11,0);
-	getTowerPos();
-
-
-
-	while(1){
-
-		if(endGame){
-			//drawEndGame();
-		}
-
-		placeTower();
-
-		//provera da li je kraj lvl-a
-
-		if (creepspeedcnt == 1000000){
-			moveCreep();
-			printCreepNumb();
-
-
-
-			if(creepCnt == 5){
-				if(creepsSpawned < 30){
-					insertCreep();
-				}
-
-				creepCnt = 0;
-
-			}
-
-			if(cnt == 6 ){
-				turretOneFire();
-				cnt = 0;
-			}
-			if(cnt1 == 4 ){
-				turretTwoFire();
-				cnt1 = 0;
-			}
-			cnt++;
-			cnt1++;
-			creepCnt++;
-			creepspeedcnt=0;
-		}
-
-		creepspeedcnt++;
-
-	}
-
-	//
+	lvl1();
+	lvl2();
 
 	return 0;
 }
