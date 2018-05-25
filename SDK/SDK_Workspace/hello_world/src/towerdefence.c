@@ -35,23 +35,17 @@
  */
 
 #include <stdio.h>
-#include "platform.h"
-#include "xparameters.h"
+
 #include "xio.h"
 #include "xil_exception.h"
-#include "vga_periph_mem.h"
-#include "towerdefence_sprites.h"
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>
 #include "maps.h"
-
-#define UP 0b01000000
-#define DOWN 0b00000100
-#define LEFT 0b00100000
-#define RIGHT 0b00001000
-#define CENTER 0b00010000
-#define SW0 0b00000001
-#define SW1 0b00000010
+#include "vga_periph_mem.h"
+#include "towerdefence_sprites.h"
+#include "platform.h"
+#include "xparameters.h"
+#include "towerdefence.h"
 
 #define GRASS 'G'
 #define DIRTPREVIOUS 'P'
@@ -79,12 +73,23 @@
 #define TOWER2 't'
 #define SELECTEDTOWER 'O'
 #define SELECTEDTOWER2 'o'
+
+#define UP 0b01000000
+#define DOWN 0b00000100
+#define LEFT 0b00100000
+#define RIGHT 0b00001000
+#define CENTER 0b00010000
+#define SW0 0b00000001
+#define SW1 0b00000010
 #define MAXCREEPS 5
 
 bool endGame = false;
-//Places for towers
 
-unsigned char map1[SIZEROW][SIZECOLUMN];
+//////////////BUGS////////////////////
+// level 2 tower cnt bug,
+// something is wrong with array initialization or define(working after first pass)
+//////////////////////////////////////
+unsigned char map1[SIZEROW][SIZECOLUMN] = {{[0 ... SIZEROW-1] = GRASS}, {[0 ... SIZECOLUMN-1] = GRASS}};
 
 int rowDirtFields[60]={[0 ... 59] = -1};
 int columnDirtFields[60]={[0 ... 59] = -1};
@@ -102,7 +107,6 @@ int currentHP = 3;
 int coins = 31;
 
 char lastKey = 'n';
-
 
 void init(){
 
@@ -415,10 +419,7 @@ void getDirtPos(int startRow,int startColumn){
 				columnDirtFields[dirtLen] = columnDirtFields[dirtLen-1]-1;
 			}
 		}
-
 	}
-
-
 }
 
 void getTowerPos(){
@@ -443,7 +444,6 @@ void getTowerPos(){
 			}
 		}
 	}
-
 }
 
 char getPressedKey() {
@@ -599,8 +599,8 @@ void placeTower(){
 
 void insertCreep(){
 	//////////////////////////////////////////////////////////////////////////////////////
-	static int DONTTOUCH = 0; /// NEMOJ DIRATI OVO NIKADA NI SLUCAJNO
-	DONTTOUCH++;			  /// A NI OVO!!!!!!!!!!!!!!!!!! NIKADA :) OZBILJNO TO MISLIM.... KENJICU NE SERI!
+	//static int DONTTOUCH = 0; /// NEMOJ DIRATI OVO NIKADA NI SLUCAJNO
+	//DONTTOUCH++;			  /// A NI OVO!!!!!!!!!!!!!!!!!! NIKADA :) OZBILJNO TO MISLIM.... KENJICU NE SERI!
 	//////////////////////////////////////////////////////////////////////////////////////
 
 	map1[rowDirtFields[0]][columnDirtFields[0]] = CREEP;
@@ -701,8 +701,8 @@ void drawEndGame(){
 	while(1){
 
 		if((Xil_In32(XPAR_MY_PERIPHERAL_0_BASEADDR) & CENTER) == 0){
-				break;
-			}
+			break;
+		}
 
 		for (row = 0; row < SIZEROW; row++) {
 			for (column = 0; column < SIZECOLUMN; column++) {
@@ -723,12 +723,10 @@ void drawEndGame(){
 	}
 }
 
-void lvl1(){
-	int turrentOneFire=0, turrentTwoFire=0;
-	unsigned int placeTowerSpeed=0;
-	unsigned int creepSpeed = 0;
-	int creepTime = 0;
+bool lvl1(){
 
+
+	// load first map
 	int row,column;
 	for (row = 0; row < SIZEROW; row++) {
 		for (column = 0; column < SIZECOLUMN; column++) {
@@ -737,19 +735,21 @@ void lvl1(){
 		}
 	}
 
+	int turrentOneFire=0, turrentTwoFire=0;
+	unsigned int placeTowerSpeed=0;
+	unsigned int creepSpeed = 0;
+	int creepTime = 0;
+
+	// reset global variables
 	currentHP = 3;
 	coins = 21;
 	creepsSpawned = 0;
 	currentI = 0;
 	endGame = false;
 	creepsRem = MAXCREEPS;
-	printCoins();
-	drawSprite(8,64,16,0,8,8);
 	dirtLen=0;
 	numOfTowers = 0;
-
-	getDirtPos(0,2);
-	getTowerPos();
+	bool passed = false;
 
 	drawMap(); // init map
 
@@ -758,15 +758,18 @@ void lvl1(){
 	drawSprite(8,64,16,0,8,8);
 	drawSprite(8,72,16,8,8,8);
 
+	getDirtPos(0,2);
+	getTowerPos();
+
 	while(1){
 
 			if(endGame){
-				drawEndGame();
-				lvl1();
+				passed = false;
+				break;
 			}
 
 			if (creepsRem == 0){
-				drawWinLvl();
+				passed = true;
 				break;
 			}
 			if (placeTowerSpeed == 10000){
@@ -774,11 +777,7 @@ void lvl1(){
 				placeTowerSpeed = 0;
 			}
 
-			//provera da li je kraj lvl-a
 			if (creepSpeed == 1000000){
-				moveCreep();
-				printCreepNumb();
-
 				if(creepTime == 5){
 					if(creepsSpawned < MAXCREEPS){
 						insertCreep();
@@ -787,6 +786,9 @@ void lvl1(){
 					creepTime = 0;
 
 				}
+
+				moveCreep();
+				printCreepNumb();
 
 				if(turrentOneFire == 6 ){
 					turretOneFire();
@@ -808,14 +810,11 @@ void lvl1(){
 			placeTowerSpeed++;
 
 		}
+	return passed;
 }
 
-void lvl2(){
-	int turrentOneFire=0, turrentTwoFire=0;
-	unsigned int placeTowerSpeed=0;
-	unsigned int creepSpeed = 0;
-	int creepTime = 0;
-
+bool lvl2(){
+	// load lvl 2
 	int row,column;
 	for (row = 0; row < SIZEROW; row++) {
 		for (column = 0; column < SIZECOLUMN; column++) {
@@ -824,19 +823,21 @@ void lvl2(){
 		}
 	}
 
+	int turrentOneFire=0, turrentTwoFire=0;
+	unsigned int placeTowerSpeed=0;
+	unsigned int creepSpeed = 0;
+	int creepTime = 0;
+	bool passed = false;
+
+	// reset global variables
 	currentHP = 3;
 	coins = 21;
 	creepsSpawned = 0;
 	currentI = 0;
 	endGame = false;
 	creepsRem = MAXCREEPS;
-	printCoins();
-	drawSprite(8,64,16,0,8,8);
 	dirtLen=0;
 	numOfTowers = 0;
-
-	getDirtPos(11,0);
-	getTowerPos();
 
 	drawMap(); // init map
 
@@ -845,16 +846,18 @@ void lvl2(){
 	drawSprite(8,64,16,0,8,8);
 	drawSprite(8,72,16,8,8,8);
 
+	getDirtPos(11,0);
+	getTowerPos();
 
 	while(1){
 
 			if(endGame){
-				drawEndGame();
-				lvl1();
+				passed = false;
+				break;
 			}
 
 			if (creepsRem == 0){
-				drawWon();
+				passed = true;
 				break;
 			}
 			if (placeTowerSpeed == 10000){
@@ -862,7 +865,6 @@ void lvl2(){
 				placeTowerSpeed = 0;
 			}
 
-			//provera da li je kraj lvl-a
 			if (creepSpeed == 1000000){
 				moveCreep();
 				printCreepNumb();
@@ -896,6 +898,7 @@ void lvl2(){
 			placeTowerSpeed++;
 
 		}
+	return passed;
 }
 
 
@@ -907,8 +910,19 @@ int main() {
 	init_platform();
 	init();
 
-	lvl1();
-	lvl2();
+	while (1){
+		if (lvl1()){
+			drawWinLvl();
+			if (lvl2()){
+				drawWon();
+			} else {
+				drawEndGame();
+			}
+		} else {
+			drawEndGame();
+		}
+
+	}
 
 	return 0;
 }
