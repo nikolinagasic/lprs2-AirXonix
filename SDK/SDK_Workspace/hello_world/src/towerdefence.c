@@ -81,7 +81,7 @@
 #define CENTER 0b00010000
 #define SW0 0b00000001
 #define SW1 0b00000010
-#define MAXCREEPS 5
+#define MAXCREEPS 20
 
 bool endGame = false;
 
@@ -104,7 +104,7 @@ int creepsRem = MAXCREEPS;
 int currentI = 0;
 int btnCnt = 0;
 int currentHP = 3;
-int coins = 31;
+int coins = 20;
 
 char lastKey = 'n';
 
@@ -742,7 +742,7 @@ bool lvl1(){
 
 	// reset global variables
 	currentHP = 3;
-	coins = 21;
+	coins = 20;
 	creepsSpawned = 0;
 	currentI = 0;
 	endGame = false;
