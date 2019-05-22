@@ -137,8 +137,6 @@ static void handle_death() {
 
 		}
 
-		//reset_function();
-
 		//vracanje igraca na pocetni polozaj
 		player.x = MAP_WIDTH / 2 - 1;
 		player.y = MAP_HEIGHT - 1;
@@ -159,7 +157,7 @@ static void handle_death() {
 
 
 		game_running = false;
-		//reset_function();
+
 	}
 }
 
@@ -283,7 +281,8 @@ int main()
     draw_sprite(heart_image, 0, MAP_HEIGHT);
     draw_sprite(heart_image, 1, MAP_HEIGHT);
     draw_sprite(heart_image, 2, MAP_HEIGHT);
-    draw_sprite(clock_image, 19, MAP_HEIGHT);
+   // draw_sprite(clock_image, 19, MAP_HEIGHT);
+
     while (get_direction() == DIRECTION_NONE) {
 
     }
