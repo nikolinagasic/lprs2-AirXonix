@@ -16,6 +16,12 @@ extern uint32_t clock_image[TILE_SIZE * TILE_SIZE];
 extern uint32_t heart_image[TILE_SIZE * TILE_SIZE];
 
 extern uint32_t black_image[TILE_SIZE * TILE_SIZE];
+extern uint32_t sad[TILE_SIZE * TILE_SIZE];
+extern uint32_t happy[TILE_SIZE * TILE_SIZE];
+
+extern uint32_t dvotacka[TILE_SIZE * TILE_SIZE];
+
+
 
 extern uint32_t inner_tile[TILE_SIZE * TILE_SIZE];
 extern uint32_t outer_tile[TILE_SIZE * TILE_SIZE];

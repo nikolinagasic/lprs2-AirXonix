@@ -10,9 +10,14 @@
 #include "vga_periph_mem.h"
 #include "xintc.h"
 #include "gameplay.h"
+
 #define DIRT 'D'
 #define CREEP 0
 #define CREEP4 4
+#define WIN_PERCENTAGE 30
+
+
+
 
 void handle_top_right(int enemy_index) {
     const int x = enemies[enemy_index].x;
@@ -97,6 +102,7 @@ void handle_bottom_left(int enemy_index) {
 static bool game_running = false;
 static unsigned ticks = 0;
 static unsigned seconds = 0;
+static unsigned minutes = 0;
 static unsigned lives = 3;
 static bool skip_handle_death = false;
 
@@ -147,7 +153,9 @@ static void handle_death() {
 			while(1){
 				for (i = 0; i < MAP_WIDTH; i++) {
 					for (j = 0; j < MAP_HEIGHT; j++) {
-						draw_sprite(empty_tile,i,j);
+						//draw_sprite(clock_image,i,j);
+						draw_sprite(sad,i,j);
+
 					}
 					draw_sprite(black_image,i,INFO_LINE);
 					}
@@ -226,6 +234,72 @@ void vga_interrupt(void *arg) {
 		handle_death();
 		skip_handle_death = true;
     }
+    //////////////////////////////////
+
+   print_percentage();
+
+
+   if (get_percentage() > WIN_PERCENTAGE) {
+      	// TODO: Sta se desi kad pobedis
+      	// Vecina ce biti na temu handle_death samo uz ispis da je pobedio
+
+	   unsigned i, j;
+
+	   	if (skip_handle_death) {
+	   		return;
+	   	}
+
+	   	if (lives > 1) {
+	   		--lives;
+
+	   		//sklanjaju se sva popunjena i isprekidana polja
+	   	    for (j = 1; j < MAP_HEIGHT - 1; j++) {
+	   	        for (i = 1; i < MAP_WIDTH - 1; i++) {
+	   	            TileType type = tile_at(i, j);
+	   	            //sklanja dashed i potencijalno popunjene
+	   	            if (type == TILE_MAYBE_FILLED || type == TILE_DASHED) {
+	   	                set_tile(i, j, TILE_EMPTY);
+	   	                //draw_sprite(empty_tile, i, j);
+	   	             draw_sprite(heart_image, i, INFO_LINE);
+	   	            }
+
+	   	        }
+	   	    }
+
+	   	    //OBRISE SRCE I POZADINA OSTANE CRNA NE BUDE ROZE KAO PRE
+	   	    delete_heart(0,INFO_LINE);
+	   	    delete_heart(1,INFO_LINE);
+	   	   	delete_heart(2,INFO_LINE);
+	   		//delete_heart(19,INFO_LINE);
+
+	   	   	//crta onoliko srca koliko je ostalo
+	   		for (i = 0 ; i < lives ; i++) {
+	   		    draw_sprite(heart_image, i, INFO_LINE);
+
+	   		}
+
+	   		//vracanje igraca na pocetni polozaj
+	   		player.x = MAP_WIDTH / 2 - 1;
+	   		player.y = MAP_HEIGHT - 1;
+	   	}
+	   	else {
+
+	   		int i,j;
+	   			while(1){
+	   				for (i = 0; i < MAP_WIDTH; i++) {
+	   					for (j = 0; j < MAP_HEIGHT; j++) {
+	   						draw_sprite(happy, i, j);
+	   					}
+	   					draw_sprite(black_image,i,INFO_LINE);
+	   					}
+
+	   		}
+
+	   		game_running = false;
+
+	   	}
+
+      }
 
     if (ticks % ANIMATION_SPEED ==  0) {
         animate_player();
@@ -235,7 +309,19 @@ void vga_interrupt(void *arg) {
     draw_enemies();
 
     ticks = (ticks + 1);
+
+    if (ticks % 60 == 0) {
+    	seconds++;
+    	if (seconds == 60) {
+    		seconds = 0;
+    		minutes++;
+    	}
+    }
+    print_time(minutes, seconds);
+
+
 }
+
 
 static XIntc xintc;
 
@@ -247,13 +333,27 @@ static void init_interrupts() {
 	microblaze_enable_interrupts();
 }
 
+void reset_function(){
+
+	init_platform();
+	init_interrupts();
+	init_map();
+	init_player();
+	init_enemies();
+	 ticks = 0;
+	 seconds = 0;
+	 minutes=0;
+	 lives = 3;
+
+}
 
 
 int main()
 {
-
+	reset_function();
 	 ticks = 0;
 	 seconds = 0;
+	 minutes=0;
 	 lives = 3;
      init_platform();
 
@@ -281,7 +381,10 @@ int main()
     draw_sprite(heart_image, 0, MAP_HEIGHT);
     draw_sprite(heart_image, 1, MAP_HEIGHT);
     draw_sprite(heart_image, 2, MAP_HEIGHT);
-   // draw_sprite(clock_image, 19, MAP_HEIGHT);
+
+
+
+    draw_sprite(clock_image, 18, MAP_HEIGHT);
 
     while (get_direction() == DIRECTION_NONE) {
 
