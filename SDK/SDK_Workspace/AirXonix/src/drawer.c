@@ -46,7 +46,6 @@ void undraw_sprite(int x, int y) {
 }
 
 
-//BRISE SRCA I PRAVI POZADINU CRNU,ZATO JE 0X000000
 
 void delete_heart(int x, int y) {
     int i;

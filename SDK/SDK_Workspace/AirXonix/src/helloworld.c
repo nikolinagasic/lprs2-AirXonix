@@ -239,11 +239,7 @@ void vga_interrupt(void *arg) {
    print_percentage();
 
 
-   if (get_percentage() > WIN_PERCENTAGE) {
-      	// TODO: Sta se desi kad pobedis
-      	// Vecina ce biti na temu handle_death samo uz ispis da je pobedio
-
-	   unsigned i, j;
+   if (get_percentage() > WIN_PERCENTAGE) {unsigned i, j;
 
 	   	if (skip_handle_death) {
 	   		return;
@@ -252,33 +248,27 @@ void vga_interrupt(void *arg) {
 	   	if (lives > 1) {
 	   		--lives;
 
-	   		//sklanjaju se sva popunjena i isprekidana polja
 	   	    for (j = 1; j < MAP_HEIGHT - 1; j++) {
 	   	        for (i = 1; i < MAP_WIDTH - 1; i++) {
 	   	            TileType type = tile_at(i, j);
-	   	            //sklanja dashed i potencijalno popunjene
+
 	   	            if (type == TILE_MAYBE_FILLED || type == TILE_DASHED) {
 	   	                set_tile(i, j, TILE_EMPTY);
-	   	                //draw_sprite(empty_tile, i, j);
-	   	             draw_sprite(heart_image, i, INFO_LINE);
+	   	                draw_sprite(heart_image, i, INFO_LINE);
 	   	            }
 
 	   	        }
 	   	    }
 
-	   	    //OBRISE SRCE I POZADINA OSTANE CRNA NE BUDE ROZE KAO PRE
 	   	    delete_heart(0,INFO_LINE);
 	   	    delete_heart(1,INFO_LINE);
 	   	   	delete_heart(2,INFO_LINE);
-	   		//delete_heart(19,INFO_LINE);
 
-	   	   	//crta onoliko srca koliko je ostalo
 	   		for (i = 0 ; i < lives ; i++) {
 	   		    draw_sprite(heart_image, i, INFO_LINE);
 
 	   		}
 
-	   		//vracanje igraca na pocetni polozaj
 	   		player.x = MAP_WIDTH / 2 - 1;
 	   		player.y = MAP_HEIGHT - 1;
 	   	}
@@ -369,8 +359,7 @@ int main()
 	VGA_PERIPH_MEM_mWriteMemory(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x20, 1);
 
 
-	 init_platform();
-	//print_string(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR, string_s, 6);
+	init_platform();
     init_map();
     init_player();
     init_enemies();
