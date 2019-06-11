@@ -3,6 +3,7 @@
 #include "map.h"
 #include "gameplay.h"
 
+
 bool check_collisions() {
 	int i;
 

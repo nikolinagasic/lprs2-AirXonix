@@ -34,7 +34,7 @@ void undraw_sprite(int x, int y) {
         for (j = 0; j < TILE_SIZE; j++) {
             const int row = TILE_SIZE * x + i;
             const int col = TILE_SIZE * y + j;
-
+                      //TILE_FILLED--zeleno polje
             if (tile_at(x, y) == TILE_FILLED) {
                 SET_PIXEL(row, col, filled_tile[j * TILE_SIZE + i]);
             }

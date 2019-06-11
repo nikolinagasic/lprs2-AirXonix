@@ -169,6 +169,7 @@ static void handle_death() {
 	}
 }
 
+//logika igre
 void vga_interrupt(void *arg) {
 	(void)arg;
 
@@ -234,7 +235,7 @@ void vga_interrupt(void *arg) {
 		handle_death();
 		skip_handle_death = true;
     }
-    //////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////
 
    print_percentage();
 
